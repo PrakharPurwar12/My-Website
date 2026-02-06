@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* body{
+            justify-content: center;
+            align-items: center;
+        }
+        #contact{
+            background:  rgb(239, 239, 239);
+            margin-top: 50px;
+            margin-left: 242px;
+            text-align: center;
+            padding: 20px 30px 20px 30px;
+            width: 75%;
+            justify-content: center;
+            border-radius: 50px;
+        }
+        :hover #contact{
+            background:  rgb(239, 239, 239);
+            margin-top: 50px;
+            margin-left: 13%;
+            text-align: center;
+            padding: 20px 30px 20px 30px;
+            width: 75%;
+            justify-content: center;
+            border-radius: 50px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+            transition: ease-in-out 1s;
+        } */
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100">
+    <nav
+      class="bg-purple-700 text-white flex justify-between h-16 items-center px-8"
+    >
+      <div
+        class="font-bold text-2xl cursor-pointer transition-all duration-300 ease-out hover:text-red-300 hover:scale-110"
+      >
+        The Prakhar Stack
+      </div>
+      <ul class="flex space-x-3 text-xl font-semibold gap-10">
+        <li
+          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
+        >
+          <a href="#Home">Home</a>
+        </li>
+        <li
+          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
+        >
+          <a href="#About">About</a>
+        </li>
+        <li
+          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
+        >
+          <a href="#Projects">Projects</a>
+        </li>
+        <li
+          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
+        >
+          <a href="#Skills">Skills</a>
+        </li>
+        <li
+          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
+        >
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main
+      id="Home"
+      class="flex flex-col items-center justify-center mt-8 px-6 max-w-5xl mx-auto"
+    >
+      <img
+        src="dp.png"
+        alt="Prakhar's Profile Picture"
+        class="h-44 w-44 rounded-full object-cover shadow-xl hover:shadow-black hover:scale-110 transition duration-500 mb-4"
+      />
+      <p class="text-center italic text-2xl">
+        “Code is the language of logic, but data is the language of truth.<br />
+        Master both, and you control the future.”
+      </p>
+      <h1
+        class="text-3xl font-bold mt-4 hover:shadow-lg hover:shadow-red-600 transition duration-500 rounded-2xl p-3"
+      >
+        Hi, I'm Prakhar!
+      </h1>
+      <h3 class="text-xl mt-2 mb-4">
+        Aspiring Data Scientist & Full Stack Developer
+      </h3>
+      <div id="button" class="flex space-x-4">
+        <button
+          class="bg-purple-700 text-white px-6 py-2 rounded-2xl hover:bg-cyan-300 hover:shadow-lg hover:shadow-purple-600 transition duration-500"
+        >
+         <a href="#About"> Explore My Work </a>
+        </button>
+        <button
+          class="bg-white-400 text-black border-2 shadow-2xl px-6 py-2 hover:bg-gray-100 rounded-2xl hover:shadow-lg hover:scale-110 transition duration-500"
+        >
+          <a href="Resume.pdf" target="_blank" rel="noopener noreferrer">Professional Resume</a>
+        </button>
+      </div>
+
+      <h1
+        id="About"
+        class="text-3xl font-bold mt-12 hover:text-red-600 transition duration-300"
+      >
+        About me
+      </h1>
+      <div
+        class="w-full max-w-5xl mt-4 p-6 rounded-2xl hover:bg-gray-100 shadow-lg hover:shadow-red-600 transition duration-500"
+      >
+        <p class="text-lg mt-2 text-justify">
+          I am a third-year B.Tech student specializing in Data Science at
+          Lovely Professional University with a strong aspiration toward
+          full-stack development and data-driven problem solving. I possess a
+          solid technical foundation in Python, SQL, data analysis, data
+          visualization, and machine learning fundamentals, supported by
+          hands-on academic and project experience. My work focuses on designing
+          and implementing end-to-end solutions that integrate data analytics,
+          backend logic, APIs, and frontend interfaces to transform raw data
+          into actionable insights and scalable applications. I am highly
+          motivated, detail-oriented, and eager to contribute to innovative,
+          impact-driven teams by leveraging data science, analytics, and
+          full-stack engineering to support informed strategic decision-making
+          and deliver measurable outcomes.
+        </p>
+      </div>
+      <h1
+        id="Education"
+        class="text-3xl font-bold mt-12 hover:text-red-600 transition duration-300"
+      >
+        Education
+      </h1>
+      <div class="w-full max-w-5xl mt-4">
+        <div
+          class="relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition duration-500 hover:bg-gray-100 hover:shadow-red-400"
+        >
+          <div class="absolute inset-y-0 left-0 w-1"></div>
+          <div
+            class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 pl-4"
+          >
+            <div>
+              <h2 class="text-xl font-semibold text-gray-900">
+                Lovely Professional University
+              </h2>
+              <p class="text-base text-gray-700">
+                Bachelor of Technology (B.Tech) - Computer Science & Engineering
+              </p>
+              <div
+                class="mt-2 flex flex-wrap items-center gap-2 text-sm text-gray-600"
+              >
+                <span class="rounded-full bg-gray-100 px-3 py-1"
+                  >CGPA: 7.0</span
+                >
+                <span class="rounded-full bg-gray-100 px-3 py-1"
+                  >Aug 2023 - Present</span
+                >
+                <span class="rounded-full bg-gray-100 px-3 py-1"
+                  >Punjab, India</span
+                >
+              </div>
+            </div>
+            <div class="md:text-right">
+              <p class="text-sm font-semibold text-gray-700">
+                Relevant Coursework
+              </p>
+              <div class="mt-2 flex flex-wrap gap-2 md:justify-end">
+                <span
+                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
+                  >Data Structures & Algorithms</span
+                >
+                <span
+                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
+                  >Database Management Systems</span
+                >
+                <span
+                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
+                  >Statistics & Probability</span
+                >
+                <span
+                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
+                  >Machine Learning Fundamentals</span
+                >
+                <span
+                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
+                  >Data Analysis with Python</span
+                >
+                <span
+                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
+                  >Web Technologies (HTML, CSS, JavaScript)</span
+                >
+                <span
+                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
+                  >Backend Development Concepts</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1
+        id="Projects"
+        class="text-3xl font-bold mt-12 hover:text-red-600 transition duration-300"
+      >
+        Projects
+      </h1>
+      <div
+        class="bg-gray-100 w-full max-w-5xl mt-4 p-6 rounded-2xl hover:shadow-lg hover:transition duration-500 "
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch hover:shadow-lg hover:shadow-red-400 transition duration-500 p-4 rounded-2xl "
+        >
+          <div
+            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
+          >
+            <h2 class="font-bold text-2xl">Data Visualization Dashboard</h2>
+            <p class="text-base mt-2">
+              A comprehensive sales analytics dashboard built in Power BI, featuring KPI cards, trend analysis, and interactive filters to support fast, data-driven business decisions.
+            </p>
+          </div>
+          <div
+            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
+          >
+            <h2 class="font-bold text-2xl">
+              Socio-Economic Analysis of Indian Households
+            </h2>
+            
+            <p class="text-base mt-2">
+              A comprehensive data analysis project examining income,
+              education, employment, and living conditions across Indian
+              households to uncover socio-economic trends and actionable
+              insights.
+            </p>
+          </div>
+          <div
+            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
+          >
+            <h2 class="font-bold text-2xl">Bargain Hunter Bot</h2>
+            <p class="text-base mt-2">
+              A price-tracking automation bot that enables data-driven purchasing decisions and identifies smarter, cost-effective deals across platforms.
+            </p>
+          </div>
+          <div
+            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
+          >
+            <h2 class="font-bold text-2xl">Car Price Prediction Model</h2>
+            <p class="text-base mt-2">
+              A machine learning model that predicts car prices based on key
+              features such as brand, model, mileage, fuel type, and
+              manufacturing year to support data-driven pricing decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <section class="flex flex-col items-center mt-12 mb-12">
+        <h2 class="text-3xl font-bold mb-4 hover:text-red-600 ">Certificates</h2>
+        <div
+          id="certificates"
+          class="w-full max-w-5xl bg-white-300 rounded-2xl p-6 shadow-md hover:shadow-lg hover:bg-gray-100 hover:shadow-red-400 transition duration-500"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+            <div
+              id="certificate1"
+              class="bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+            >
+              <img
+                src="image.png"
+                alt="Data Analytics with Python certificate"
+                class="w-full h-32 object-cover rounded-lg mb-3"
+              />
+              <h3 class="text-xl font-semibold">
+                Programming for Data Science
+              </h3>
+              <p class="text-sm text-gray-600 mt-1">Coursera • 2025</p>
+              <p class="mt-2 text-gray-700">
+                Covered data cleaning, visualization, and exploratory analysis
+                with real datasets.
+              </p>
+            </div>
+            <div
+              id="certificate2"
+              class="bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+            >
+              <img
+                src="FreeCodeCamp.png"
+                alt="FreeCodeCamp certificate"
+                class="w-full h-32 object-cover rounded-lg mb-3"
+              />
+              <h3 class="text-xl font-semibold">Responsive Web Design</h3>
+              <p class="text-sm text-gray-600 mt-1">IBM • 2024</p>
+              <p class="mt-2 text-gray-700">Created a responsive website using HTML and CSS fundamentals.</p>
+            </div>
+            <div
+              id="certificate3"
+              class="bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+            >
+              <img
+                src="deloitte-certificate.png"
+                alt="Deloitte Data Analytics Job Simulation certificate"
+                class="w-full h-32 object-cover rounded-lg mb-3"
+              />
+              <h3 class="text-xl font-semibold">
+                Data Analytics Job Simulation
+              </h3>
+              <p class="text-sm text-gray-600 mt-1">Deloitte • 2025</p>
+              <p class="mt-2 text-gray-700">
+                Completed hands-on data analytics tasks and business insights.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="Skills" class="flex flex-col items-center mt-12">
+        <h2
+          class="text-3xl font-bold mb-4 hover:text-red-600 transition duration-300"
+        >
+          Skills
+        </h2>
+        <div
+          class="w-full max-w-5xl bg-white-100 rounded-2xl p-6 shadow-md hover:bg-gray-100 hover:shadow-lg hover:shadow-red-400 transition duration-500 overflow-hidden"
+        >
+          <marquee behavior="scroll" direction="left" scrollamount="6">
+            <div class="flex items-center gap-3">
+              <span
+                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
+                >Python</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
+                >C</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
+                >C++</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
+                >Java</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
+                >HTML</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
+                >CSS</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
+                >JavaScript</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
+                >SQL</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >scikit-learn</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >Pandas</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >NumPy</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >Matplotlib</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >Seaborn</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >Plotly</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >TensorFlow</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >PyTorch</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >Flask</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >FastAPI</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >Django</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
+                >Git</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
+                >GitHub</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
+                >Power BI</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
+                >Jupyter Notebook</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
+                >Postman</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
+                >MySQL</span
+              >
+              <span
+                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
+                >PostgreSQL</span
+              >
+            </div>
+          </marquee>
+        </div>
+      </section>
+    </main>
+    <section
+      id="contact"
+      class="py-16 bg-transparent dark:bg-gray-100 rounded-2xl mt-12 px-6 max-w-5xl mx-auto hover:shadow-lg hover:shadow-black-500 transition duration-500"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl font-bold mt-5 hover:text-red-600 transition pb-12 duration-300 text-center"
+        >
+          Get in Touch
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-8 text-center">
+          Interested in collaborating or discussing data science or full-stack
+          opportunities? Reach out!
+        </p>
+        <div class="max-w-lg mx-auto text-center">
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Please contact me directly via email:
+          </p>
+          <a
+            href="mailto:purwarprakhar00@gmail.com"
+            class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline hover:scale-110 text-lg"
+            >purwarprakhar00@gmail.com</a
+          >
+        </div>
+        <div class="flex justify-center space-x-6 mt-8">
+          <a
+            href="mailto:purwarprakhar00@gmail.com"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all transform hover:scale-110"
+            title="Email"
+          >
+            Email
+          </a>
+          <a
+            href="https://www.linkedin.com/in/prakharpurwar/"
+            target="_blank"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all transform hover:scale-110"
+            title="LinkedIn"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/PrakharPurwar12"
+            target="_blank"
+            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all transform hover:scale-110"
+            title="GitHub"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="text-center h-16 bg-gray-400 items-center pt-4 text-bold mt-8"
+    >
+      © 2026 Prakhar Purwar. All rights reserved.
+    </footer>
+  </body>
+</html>
