@@ -1,37 +1,89 @@
-Portfolio Website
+# Portfolio Website
 
-This repository contains my personal portfolio website, designed to present my academic background, technical skills, and project experience in data science and full stack development. The portfolio focuses on clean design, responsiveness, and clarity while highlighting data-driven and software-oriented projects.
+This repository hosts my personal portfolio website, built to present my academic background, technical expertise, and project experience in data science and full stack development. The portfolio emphasizes clean UI design, responsiveness, and clarity while showcasing data-driven and software-oriented work.
 
-Overview
+---
 
-The portfolio provides a consolidated professional profile including personal introduction, education, projects, skills, certifications, and contact information. It is intended to give recruiters and collaborators a clear understanding of my technical capabilities and career direction.
+## Overview
 
-Tech Stack
+The portfolio acts as a centralized professional profile that includes:
 
-The website is built using HTML for structure and content, Tailwind CSS for responsive and modern styling, and basic JavaScript for interactivity. Git and GitHub are used for version control and deployment.
+- Personal introduction and career focus  
+- Educational background and relevant coursework  
+- Academic and independent projects  
+- Technical skill set across data science and full stack development  
+- Certifications and continuous learning  
+- Contact and professional networking links  
 
-Features
+The goal is to provide recruiters and collaborators with a concise yet comprehensive view of my technical capabilities and growth trajectory.
 
-The portfolio includes a responsive layout suitable for different screen sizes, a clean and professional user interface, a structured project showcase, a comprehensive skills section covering data science and full stack technologies, and public deployment through GitHub Pages.
+---
 
-Project Structure
+## Tech Stack
 
-The repository consists of a main index.html file, supporting asset files such as images and resume documents, and styling managed primarily through the Tailwind CSS CDN. The structure is organized to allow easy scalability and future enhancements.
+The website is developed using the following technologies:
 
-Deployment
+- HTML for semantic structure and content  
+- Tailwind CSS for modern, responsive styling  
+- JavaScript for basic interactivity  
+- Git and GitHub for version control and deployment  
+- GitHub Pages for hosting and continuous deployment  
 
-The portfolio is deployed using GitHub Pages. Any updates pushed to the main branch are automatically reflected on the live website.
+---
 
-Future Enhancements
+## Key Features
 
-Planned improvements include adding advanced JavaScript interactions, linking live project demos, migrating to a framework-based architecture, integrating backend services for forms, and optimizing performance and SEO.
+- Fully responsive layout optimized for desktop and mobile devices  
+- Clean, minimal, and professional user interface  
+- Structured project showcase with clear descriptions  
+- Dedicated skills section covering data science, machine learning, and full stack tools  
+- Public deployment with automatic updates via GitHub Pages  
 
-About Me
+---
 
-I am a Computer Science and Engineering undergraduate with a specialization in data science. My interests include data analytics, machine learning, and full stack development. I aim to build impactful, data-driven applications that deliver scalable and practical solutions.
+## Project Structure
 
-Contact
+The repository follows a simple and scalable structure:
+
+- `index.html` as the main entry point  
+- Asset files such as images and resume documents stored in the root directory  
+- Styling handled primarily through the Tailwind CSS CDN  
+- Modular section-based layout for future expansion  
+
+---
+
+## Deployment
+
+The portfolio is deployed using GitHub Pages.  
+Any changes pushed to the `main` branch are automatically reflected on the live website.
+
+Live Website:  
+https://prakharpurwar12.github.io/My-Website/
+
+---
+
+## Future Enhancements
+
+Planned improvements include:
+
+- Adding JavaScript-based animations and transitions  
+- Linking live demos and GitHub repositories for projects  
+- Migrating to a component-based framework if required  
+- Backend integration for contact form handling  
+- Performance optimization and SEO enhancements  
+
+---
+
+## About Me
+
+I am a Computer Science and Engineering undergraduate with a specialization in data science. My interests lie at the intersection of data analytics, machine learning, and full stack development. I focus on building scalable, data-driven applications that translate insights into real-world impact.
+
+---
+
+## Contact
 
 Email: purwarprakhar00@gmail.com  
 LinkedIn: https://www.linkedin.com/in/prakharpurwar/  
-GitHub: https://github.com/PrakharPurwar12
+GitHub: https://github.com/PrakharPurwar12  
+
+---
