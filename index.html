@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
   </head>
   <body class="bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100">
     <nav
@@ -69,14 +73,12 @@
         <button
           class="bg-purple-700 text-white px-6 py-2 rounded-2xl hover:bg-cyan-300 hover:shadow-lg hover:shadow-purple-600 transition duration-500"
         >
-          <a href="#About"> Explore My Work </a>
+         <a href="#About"> Explore My Work </a>
         </button>
         <button
-          class="bg-white-400 text-black border-2 shadow-2xl px-6 py-2 hover:bg-gray-100 rounded-2xl hover:shadow-lg hover:scale-110 hover:-translate-y-1 transition duration-600"
+          class="bg-white-400 text-black border-2 shadow-2xl px-6 py-2 hover:bg-gray-100 rounded-2xl hover:shadow-lg hover:scale-110 transition duration-500"
         >
-          <a href="Resume.pdf" target="_blank" rel="noopener noreferrer"
-            >Professional Resume</a
-          >
+          <a href="Resume.pdf" target="_blank" rel="noopener noreferrer">Professional Resume</a>
         </button>
       </div>
 
@@ -89,12 +91,20 @@
       <div
         class="w-full max-w-5xl mt-4 p-6 rounded-2xl hover:bg-gray-100 shadow-lg hover:shadow-red-600 transition duration-500"
       >
-        <p class="text-lg mt-2 text-left font-normal space-y-2 ">
-          I am a B.Tech Computer Science student with an interest in Data Science and full stack development. I have worked with Python, SQL, and data analysis techniques as part of my academic coursework and personal projects.
-        </p>
-        <p class="text-lg mt-2 text-left font-normal space-y-2 ">
-          My work includes building basic dashboards, predictive models, and small automation-based solutions using real-world datasets. Through these projects, I focus on understanding data patterns, improving analytical skills, and developing practical solutions that support data-driven decision-making.
-
+        <p class="text-lg mt-2 text-justify">
+          I am a third-year B.Tech student specializing in Data Science at
+          Lovely Professional University with a strong aspiration toward
+          full-stack development and data-driven problem solving. I possess a
+          solid technical foundation in Python, SQL, data analysis, data
+          visualization, and machine learning fundamentals, supported by
+          hands-on academic and project experience. My work focuses on designing
+          and implementing end-to-end solutions that integrate data analytics,
+          backend logic, APIs, and frontend interfaces to transform raw data
+          into actionable insights and scalable applications. I am highly
+          motivated, detail-oriented, and eager to contribute to innovative,
+          impact-driven teams by leveraging data science, analytics, and
+          full-stack engineering to support informed strategic decision-making
+          and deliver measurable outcomes.
         </p>
       </div>
       <h1
@@ -176,127 +186,149 @@
       >
         Projects
       </h1>
-     <div
-  class="bg-gray-100 w-full max-w-5xl mt-4 p-6 rounded-2xl hover:shadow-lg transition duration-500"
->
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch hover:shadow-lg hover:shadow-red-400 transition duration-500 p-4 rounded-2xl"
-  >
-    <!-- 1. Car Price Prediction (ML) -->
-    <div
-      class="text-center text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
-    >
-      <h2 class="font-bold text-2xl">
-        Car Price Prediction Model (Machine Learning)
-      </h2>
-      <p class="text-base mt-2">
-        Built a machine learning model to predict car prices using structured datasets.
-        The project applies data preprocessing and regression techniques to analyze key
-        factors affecting vehicle pricing and improve prediction accuracy.
-      </p>
-    </div>
-
-    <!-- 2. Bargain Hunter Bot -->
-    <div
-      class="text-center text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
-    >
-      <h2 class="font-bold text-2xl">
-        Bargain Hunter Bot (Automation)
-      </h2>
-      <p class="text-base mt-2">
-        Developed an automation-based bot to track product prices across e-commerce
-        platforms. The project focuses on monitoring price changes and generating alerts
-        to support informed purchasing decisions.
-      </p>
-    </div>
-
-    <!-- 3. Sales Dashboard -->
-    <div
-      class="text-center text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
-    >
-      <h2 class="font-bold text-2xl">
-        Sales Data Visualization Dashboard (Power BI)
-      </h2>
-      <p class="text-base mt-2">
-        Created an interactive sales dashboard using Power BI to visualize sales
-        performance. The dashboard includes KPI cards, trend analysis, and filters to
-        help understand sales patterns and support data-driven insights.
-      </p>
-    </div>
-
-    <!-- 4. Socio-Economic Analysis -->
-    <div
-      class="text-center text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
-    >
-      <h2 class="font-bold text-2xl">
-        Socio-Economic Analysis (EDA)
-      </h2>
-      <p class="text-base mt-2">
-        Conducted exploratory data analysis on socio-economic data of Indian households
-        to study income, education, and living conditions. The project aims to identify
-        trends and patterns within the data to derive meaningful insights.
-      </p>
-    </div>
-  </div>
-</div>
-
+      <div
+        class="bg-gray-100 w-full max-w-5xl mt-4 p-6 rounded-2xl hover:shadow-lg hover:transition duration-500 "
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch hover:shadow-lg hover:shadow-red-400 transition duration-500 p-4 rounded-2xl "
+        >
+          <div
+            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
+          >
+            <h2 class="font-bold text-2xl">Data Visualization Dashboard</h2>
+            <p class="text-base mt-2">
+              A comprehensive sales analytics dashboard built in Power BI, featuring KPI cards, trend analysis, and interactive filters to support fast, data-driven business decisions.
+            </p>
+          </div>
+          <div
+            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
+          >
+            <h2 class="font-bold text-2xl">
+              Socio-Economic Analysis of Indian Households
+            </h2>
+            
+            <p class="text-base mt-2">
+              A comprehensive data analysis project examining income,
+              education, employment, and living conditions across Indian
+              households to uncover socio-economic trends and actionable
+              insights.
+            </p>
+          </div>
+          <div
+            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
+          >
+            <h2 class="font-bold text-2xl">Bargain Hunter Bot</h2>
+            <p class="text-base mt-2">
+              A price-tracking automation bot that enables data-driven purchasing decisions and identifies smarter, cost-effective deals across platforms.
+            </p>
+          </div>
+          <div
+            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
+          >
+            <h2 class="font-bold text-2xl">Car Price Prediction Model</h2>
+            <p class="text-base mt-2">
+              A machine learning model that predicts car prices based on key
+              features such as brand, model, mileage, fuel type, and
+              manufacturing year to support data-driven pricing decisions.
+            </p>
+          </div>
+        </div>
+      </div>
       <section class="flex flex-col items-center mt-12 mb-12">
         <h2 class="text-3xl font-bold mb-4 hover:text-red-600">Certificates</h2>
         <div
           id="certificates"
           class="w-full max-w-5xl bg-white-300 rounded-2xl p-6 shadow-md hover:shadow-lg hover:bg-gray-100 hover:shadow-red-400 transition duration-500"
         >
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+
             <div
-              id="certificate1"
-              class="bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+              id="cert-slider"
+              class="no-scrollbar flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-12 pb-2"
             >
-              <img
-                src="image.png"
-                alt="Data Analytics with Python certificate"
-                class="w-full h-32 object-cover rounded-lg mb-3"
-              />
-              <h3 class="text-xl font-semibold">
-                Programming for Data Science
-              </h3>
-              <p class="text-sm text-gray-600 mt-1">Coursera • 2025</p>
-              <p class="mt-2 text-gray-700">
-                Covered data cleaning, visualization, and exploratory analysis
-                with real datasets.
-              </p>
+              <div
+                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+              >
+                <img
+                  src="image.png"
+                  alt="Programming for Data Science certificate"
+                  class="w-full h-32 object-cover rounded-lg mb-3"
+                />
+                <h3 class="text-xl font-semibold">
+                  Programming for Data Science
+                </h3>
+                <p class="text-sm text-gray-600 mt-1">Coursera • 2025</p>
+                <p class="mt-2 text-gray-700">
+                  Covered data cleaning, visualization, and exploratory analysis
+                  with real datasets.
+                </p>
+              </div>
+
+              <div
+                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+              >
+                <img
+                  src="FreeCodeCamp.png"
+                  alt="Responsive Web Design certificate"
+                  class="w-full h-32 object-cover rounded-lg mb-3"
+                />
+                <h3 class="text-xl font-semibold">Responsive Web Design</h3>
+                <p class="text-sm text-gray-600 mt-1">IBM • 2024</p>
+                <p class="mt-2 text-gray-700">
+                  Created a responsive website using HTML and CSS fundamentals.
+                </p>
+              </div>
+
+              <div
+                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+              >
+                <img
+                  src="deloitte-certificate.png"
+                  alt="Deloitte Data Analytics Job Simulation certificate"
+                  class="w-full h-32 object-cover rounded-lg mb-3"
+                />
+                <h3 class="text-xl font-semibold">
+                  Data Analytics Job Simulation
+                </h3>
+                <p class="text-sm text-gray-600 mt-1">Deloitte • 2025</p>
+                <p class="mt-2 text-gray-700">
+                  Completed hands-on data analytics tasks and business insights.
+                </p>
+              </div>
+
+              <div
+                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+              >
+                <img
+                  src="google-certificate.png"
+                  alt="The Bits and Bytes of Computer Networking"
+                  class="w-full h-32 object-cover rounded-lg mb-3"
+                />
+                <h3 class="text-xl font-semibold">The Bits and Bytes of Computer Networking</h3>
+                <p class="text-sm text-gray-600 mt-1">coursera • 2024</p>
+                <p class="mt-2 text-gray-700">
+                  Covered networking basics like protocols, IP addressing, DNS,
+                  routing, and troubleshooting connectivity issues.
+                </p>
+              </div>
+
+              <div
+                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
+              >
+                <img
+                  src="toc.png"
+                  alt="Computational Theory: Language Principle & Finite Automata Theory"
+                  class="w-full h-32 object-cover rounded-lg mb-3"
+                />
+                <h3 class="text-xl font-semibold">Computational Theory: Language Principle & Finite Automata Theory</h3>
+                <p class="text-sm text-gray-600 mt-1">Infosys Springboard • 2025</p>
+                <p class="mt-2 text-gray-700">
+                  Studied formal languages, grammars, finite automata, and
+                  their role in designing language recognizers.
+                </p>
+              </div>
             </div>
-            <div
-              id="certificate2"
-              class="bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
-            >
-              <img
-                src="FreeCodeCamp.png"
-                alt="FreeCodeCamp certificate"
-                class="w-full h-32 object-cover rounded-lg mb-3"
-              />
-              <h3 class="text-xl font-semibold">Responsive Web Design</h3>
-              <p class="text-sm text-gray-600 mt-1">IBM • 2024</p>
-              <p class="mt-2 text-gray-700">
-                Created a responsive website using HTML and CSS fundamentals.
-              </p>
-            </div>
-            <div
-              id="certificate3"
-              class="bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
-            >
-              <img
-                src="deloitte-certificate.png"
-                alt="Deloitte Data Analytics Job Simulation certificate"
-                class="w-full h-32 object-cover rounded-lg mb-3"
-              />
-              <h3 class="text-xl font-semibold">
-                Data Analytics Job Simulation
-              </h3>
-              <p class="text-sm text-gray-600 mt-1">Deloitte • 2025</p>
-              <p class="mt-2 text-gray-700">
-                Completed hands-on data analytics tasks and business insights.
-              </p>
-            </div>
+
           </div>
         </div>
       </section>
