@@ -3,507 +3,657 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Prakhar Purwar | Portfolio</title>
+    <script src="js/script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-      <style>
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="bg-gradient-to-br from-slate-50 via-purple-50 to-indigo-100">
-    <nav
-      class="bg-purple-700 text-white flex justify-between h-16 items-center px-8"
-    >
-      <div
-        class="font-bold text-2xl cursor-pointer transition-all duration-300 ease-out hover:text-red-300 hover:scale-110"
-      >
-        The Prakhar Stack
+  <body class="text-ink">
+    <nav class="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
+        <a href="#home" class="font-display text-xl font-bold tracking-tight text-pine">
+          Prakhar Purwar
+        </a>
+        <div class="flex items-center gap-3">
+          <ul class="hidden items-center gap-5 text-sm font-medium text-gray-700 md:flex">
+            <li><a href="#about" class="nav-link transition hover:text-accent">About</a></li>
+            <li><a href="#internship" class="nav-link transition hover:text-accent">Experience</a></li>
+            <li><a href="#projects" class="nav-link transition hover:text-accent">Projects</a></li>
+            <li><a href="#skills" class="nav-link transition hover:text-accent">Skills</a></li>
+            <li><a href="#contact" class="nav-link transition hover:text-accent">Contact</a></li>
+            <li class="relative">
+              <button
+                id="more-button"
+                class="inline-flex items-center gap-2 rounded-full border border-black/10 px-4 py-2 text-sm font-medium text-gray-700 transition hover:border-accent hover:text-accent"
+                type="button"
+                aria-expanded="false"
+                aria-controls="more-menu"
+              >
+                More
+              </button>
+              <div
+                id="more-menu"
+                class="absolute right-0 top-12 hidden min-w-[220px] rounded-[1.25rem] border border-black/10 bg-white/95 p-3 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/95"
+              >
+                <ul class="flex flex-col gap-1 text-sm font-medium text-gray-700 dark:text-slate-200">
+                  <li><a href="#achievements" class="more-menu-link nav-link block rounded-xl px-3 py-2 transition hover:bg-black/5 hover:text-accent dark:hover:bg-white/5 dark:hover:text-accent">Achievements</a></li>
+                  <li><a href="#extracurricular" class="more-menu-link nav-link block rounded-xl px-3 py-2 transition hover:bg-black/5 hover:text-accent dark:hover:bg-white/5 dark:hover:text-accent">Activities</a></li>
+                  <li><a href="#training" class="more-menu-link nav-link block rounded-xl px-3 py-2 transition hover:bg-black/5 hover:text-accent dark:hover:bg-white/5 dark:hover:text-accent">Training</a></li>
+                  <li><a href="#certificates" class="more-menu-link nav-link block rounded-xl px-3 py-2 transition hover:bg-black/5 hover:text-accent dark:hover:bg-white/5 dark:hover:text-accent">Certificates</a></li>
+                  <li><a href="#education" class="more-menu-link nav-link block rounded-xl px-3 py-2 transition hover:bg-black/5 hover:text-accent dark:hover:bg-white/5 dark:hover:text-accent">Education</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <button
+            id="theme-toggle"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-sm font-semibold text-gray-700 transition hover:border-accent hover:text-accent"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+          >
+            <span id="theme-toggle-label" class="theme-icon" aria-hidden="true">&#9728;</span>
+          </button>
+          <button
+            id="menu-button"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-pine md:hidden"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Toggle navigation"
+          >
+            <span class="text-xl leading-none">&#9776;</span>
+          </button>
+        </div>
       </div>
-      <ul class="flex space-x-3 text-xl font-semibold gap-10">
-        <li
-          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
-        >
-          <a href="#Home">Home</a>
-        </li>
-        <li
-          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
-        >
-          <a href="#About">About</a>
-        </li>
-        <li
-          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
-        >
-          <a href="#Projects">Projects</a>
-        </li>
-        <li
-          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
-        >
-          <a href="#Skills">Skills</a>
-        </li>
-        <li
-          class="hover:text-red-300 hover:scale-110 transition-all cursor-pointer"
-        >
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
+      <div id="mobile-menu" class="hidden border-t border-black/5 px-6 pb-5 md:hidden">
+        <ul class="flex flex-col gap-3 pt-4 text-sm font-semibold text-gray-700">
+          <li><a href="#about" class="nav-link block transition hover:text-accent">About</a></li>
+          <li><a href="#internship" class="nav-link block transition hover:text-accent">Internship</a></li>
+          <li><a href="#projects" class="nav-link block transition hover:text-accent">Projects</a></li>
+          <li><a href="#skills" class="nav-link block transition hover:text-accent">Skills</a></li>
+          <li><a href="#achievements" class="nav-link block transition hover:text-accent">Achievements</a></li>
+          <li><a href="#extracurricular" class="nav-link block transition hover:text-accent">Activities</a></li>
+          <li><a href="#training" class="nav-link block transition hover:text-accent">Training</a></li>
+          <li><a href="#certificates" class="nav-link block transition hover:text-accent">Certificates</a></li>
+          <li><a href="#education" class="nav-link block transition hover:text-accent">Education</a></li>
+          <li><a href="#contact" class="nav-link block transition hover:text-accent">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <main
-      id="Home"
-      class="flex flex-col items-center justify-center mt-8 px-6 max-w-5xl mx-auto"
-    >
-      <img
-        src="dp.png"
-        alt="Prakhar's Profile Picture"
-        class="h-44 w-44 rounded-full object-cover shadow-xl hover:shadow-black hover:scale-110 transition duration-500 mb-4"
-      />
-      <p class="text-center italic text-2xl">
-        “Code is the language of logic, but data is the language of truth.<br />
-        Master both, and you control the future.”
-      </p>
-      <h1
-        class="text-3xl font-bold mt-4 hover:shadow-lg hover:shadow-red-600 transition duration-500 rounded-2xl p-3"
-      >
-        Hi, I'm Prakhar!
-      </h1>
-      <h3 class="text-xl mt-2 mb-4">
-        Aspiring Data Scientist & Full Stack Developer
-      </h3>
-      <div id="button" class="flex space-x-4">
-        <button
-          class="bg-purple-700 text-white px-6 py-2 rounded-2xl hover:bg-cyan-300 hover:shadow-lg hover:shadow-purple-600 transition duration-500"
-        >
-         <a href="#About"> Explore My Work </a>
-        </button>
-        <button
-          class="bg-white-400 text-black border-2 shadow-2xl px-6 py-2 hover:bg-gray-100 rounded-2xl hover:shadow-lg hover:scale-110 transition duration-500"
-        >
-          <a href="Resume.pdf" target="_blank" rel="noopener noreferrer">Professional Resume</a>
-        </button>
-      </div>
-
-      <h1
-        id="About"
-        class="text-3xl font-bold mt-12 hover:text-red-600 transition duration-300"
-      >
-        About me
-      </h1>
-      <div
-        class="w-full max-w-5xl mt-4 p-6 rounded-2xl hover:bg-gray-100 shadow-lg hover:shadow-red-600 transition duration-500"
-      >
-        <p class="text-lg mt-2 text-left font-normal space-y-2 ">
-          I am a B.Tech Computer Science student with an interest in Data Science and full stack development. I have worked with Python, SQL, and data analysis techniques as part of my academic coursework and personal projects.
-        </p>
-        <p class="text-lg mt-2 text-left font-normal space-y-2 ">
-          My work includes building basic dashboards, predictive models, and small automation-based solutions using real-world datasets. Through these projects, I focus on understanding data patterns, improving analytical skills, and developing practical solutions that support data-driven decision-making.
-
-        </p>
-      </div>
-      <h1
-        id="Education"
-        class="text-3xl font-bold mt-12 hover:text-red-600 transition duration-300"
-      >
-        Education
-      </h1>
-      <div class="w-full max-w-5xl mt-4">
-        <div
-          class="relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition duration-500 hover:bg-gray-100 hover:shadow-red-400"
-        >
-          <div class="absolute inset-y-0 left-0 w-1"></div>
-          <div
-            class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 pl-4"
-          >
-            <div>
-              <h2 class="text-xl font-semibold text-gray-900">
-                Lovely Professional University
-              </h2>
-              <p class="text-base text-gray-700">
-                Bachelor of Technology (B.Tech) - Computer Science & Engineering
-              </p>
-              <div
-                class="mt-2 flex flex-wrap items-center gap-2 text-sm text-gray-600"
-              >
-                <span class="rounded-full bg-gray-100 px-3 py-1"
-                  >CGPA: 7.24</span
-                >
-                <span class="rounded-full bg-gray-100 px-3 py-1"
-                  >Aug 2023 - Present</span
-                >
-                <span class="rounded-full bg-gray-100 px-3 py-1"
-                  >Punjab, India</span
-                >
-              </div>
-            </div>
-            <div class="md:text-right">
-              <p class="text-sm font-semibold text-gray-700">
-                Relevant Coursework
-              </p>
-              <div class="mt-2 flex flex-wrap gap-2 md:justify-end">
-                <span
-                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
-                  >Data Structures & Algorithms</span
-                >
-                <span
-                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
-                  >Database Management Systems</span
-                >
-                <span
-                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
-                  >Statistics & Probability</span
-                >
-                <span
-                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
-                  >Machine Learning Fundamentals</span
-                >
-                <span
-                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
-                  >Data Analysis with Python</span
-                >
-                <span
-                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
-                  >Web Technologies (HTML, CSS, JavaScript)</span
-                >
-                <span
-                  class="rounded-full bg-purple-50 text-purple-700 px-3 py-1 text-xs font-medium"
-                  >Backend Development Concepts</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h1
-        id="Projects"
-        class="text-3xl font-bold mt-12 hover:text-red-600 transition duration-300"
-      >
-        Projects
-      </h1>
-      <div
-        class="bg-gray-100 w-full max-w-5xl mt-4 p-6 rounded-2xl hover:shadow-lg hover:transition duration-500 "
-      >
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch hover:shadow-lg hover:shadow-red-400 transition duration-500 p-4 rounded-2xl "
-        >
-          <div
-            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
-          >
-            <h2 class="font-bold text-2xl">Data Visualization Dashboard</h2>
-            <p class="text-base mt-2">
-              A comprehensive sales analytics dashboard built in Power BI, featuring KPI cards, trend analysis, and interactive filters to support fast, data-driven business decisions.
-            </p>
-          </div>
-          <div
-            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
-          >
-            <h2 class="font-bold text-2xl">
-              Socio-Economic Analysis of Indian Households
-            </h2>
-            
-            <p class="text-base mt-2">
-              A comprehensive data analysis project examining income,
-              education, employment, and living conditions across Indian
-              households to uncover socio-economic trends and actionable
-              insights.
-            </p>
-          </div>
-          <div
-            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
-          >
-            <h2 class="font-bold text-2xl">Bargain Hunter Bot</h2>
-            <p class="text-base mt-2">
-              A price-tracking automation bot that enables data-driven purchasing decisions and identifies smarter, cost-effective deals across platforms.
-            </p>
-          </div>
-          <div
-            class="text-center p-4 text-black bg-white-300 hover:bg-gray-200 rounded-xl hover:shadow-lg hover:shadow-gray-400 transition duration-500 p-4 rounded-2xl cursor-pointer h-full min-h-[180px] flex flex-col justify-center"
-          >
-            <h2 class="font-bold text-2xl">Car Price Prediction Model</h2>
-            <p class="text-base mt-2">
-              A machine learning model that predicts car prices based on key
-              features such as brand, model, mileage, fuel type, and
-              manufacturing year to support data-driven pricing decisions.
-            </p>
-          </div>
-        </div>
-      </div>
-      <section class="flex flex-col items-center mt-12 mb-12">
-        <h2 class="text-3xl font-bold mb-4 hover:text-red-600">Certificates</h2>
-        <div
-          id="certificates"
-          class="w-full max-w-5xl bg-white-300 rounded-2xl p-6 shadow-md hover:shadow-lg hover:bg-gray-100 hover:shadow-red-400 transition duration-500"
-        >
-          
-
-            <div
-              id="cert-slider"
-              class="no-scrollbar flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory px-12 pb-2"
+    <main id="home" class="mx-auto max-w-6xl px-6 pb-16 pt-10 lg:px-8">
+      <section class="reveal grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:py-10">
+        <div>
+          <p class="font-display text-sm font-bold uppercase tracking-[0.24em] text-accent">
+            Data Analyst | Data Science Intern
+          </p>
+          <h1 class="mt-4 max-w-3xl font-display text-5xl font-bold leading-tight text-ink md:text-6xl">
+            Data analyst focused on turning raw information into practical dashboards, models, and decisions.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-gray-700">
+            I am Prakhar, a Computer Science student building toward data analyst and data science intern
+            roles through analytics projects, machine learning workflows, and decision-focused reporting.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#projects"
+              class="rounded-full bg-pine px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink"
             >
-              <div
-                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
-              >
-                <img
-                  src="image.png"
-                  alt="Programming for Data Science certificate"
-                  class="w-full h-32 object-cover rounded-lg mb-3"
-                />
-                <h3 class="text-xl font-semibold">
-                  Programming for Data Science
-                </h3>
-                <p class="text-sm text-gray-600 mt-1">Coursera • 2025</p>
-                <p class="mt-2 text-gray-700">
-                  Covered data cleaning, visualization, and exploratory analysis
-                  with real datasets.
-                </p>
-              </div>
-
-              <div
-                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
-              >
-                <img
-                  src="FreeCodeCamp.png"
-                  alt="Responsive Web Design certificate"
-                  class="w-full h-32 object-cover rounded-lg mb-3"
-                />
-                <h3 class="text-xl font-semibold">Responsive Web Design</h3>
-                <p class="text-sm text-gray-600 mt-1">IBM • 2024</p>
-                <p class="mt-2 text-gray-700">
-                  Created a responsive website using HTML and CSS fundamentals.
-                </p>
-              </div>
-
-              <div
-                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
-              >
-                <img
-                  src="deloitte-certificate.png"
-                  alt="Deloitte Data Analytics Job Simulation certificate"
-                  class="w-full h-32 object-cover rounded-lg mb-3"
-                />
-                <h3 class="text-xl font-semibold">
-                  Data Analytics Job Simulation
-                </h3>
-                <p class="text-sm text-gray-600 mt-1">Deloitte • 2025</p>
-                <p class="mt-2 text-gray-700">
-                  Completed hands-on data analytics tasks and business insights.
-                </p>
-              </div>
-
-              <div
-                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
-              >
-                <img
-                  src="google-certificate.png"
-                  alt="The Bits and Bytes of Computer Networking"
-                  class="w-full h-32 object-cover rounded-lg mb-3"
-                />
-                <h3 class="text-xl font-semibold">The Bits and Bytes of Computer Networking</h3>
-                <p class="text-sm text-gray-600 mt-1">coursera • 2024</p>
-                <p class="mt-2 text-gray-700">
-                  Covered networking basics like protocols, IP addressing, DNS,
-                  routing, and troubleshooting connectivity issues.
-                </p>
-              </div>
-
-              <div
-                class="min-w-[260px] md:min-w-[300px] snap-start bg-white rounded-xl p-4 text-left shadow-sm hover:shadow-xl hover:shadow-gray-400 transition duration-500 hover:scale-105 cursor-pointer"
-              >
-                <img
-                  src="toc.png"
-                  alt="Computational Theory: Language Principle & Finite Automata Theory"
-                  class="w-full h-32 object-cover rounded-lg mb-3"
-                />
-                <h3 class="text-xl font-semibold">Computational Theory: Language Principle & Finite Automata Theory</h3>
-                <p class="text-sm text-gray-600 mt-1">Infosys Springboard • 2025</p>
-                <p class="mt-2 text-gray-700">
-                  Studied formal languages, grammars, finite automata, and
-                  their role in designing language recognizers.
-                </p>
-              </div>
+              View Projects
+            </a>
+            <a
+              href="assets/docs/Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full border border-ink/15 bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+            >
+              Open Resume
+            </a>
+          </div>
+          <div class="mt-10 grid gap-4 sm:grid-cols-3">
+            <div class="section-shell rounded-3xl p-4 shadow-soft">
+              <p class="text-3xl font-bold text-pine">4+</p>
+              <p class="mt-1 text-sm text-gray-600">Portfolio projects across analytics and web.</p>
             </div>
+            <div class="section-shell rounded-3xl p-4 shadow-soft">
+              <p class="text-3xl font-bold text-pine">2023</p>
+              <p class="mt-1 text-sm text-gray-600">Started B.Tech in Computer Science.</p>
+            </div>
+            <div class="section-shell rounded-3xl p-4 shadow-soft">
+              <p class="text-3xl font-bold text-pine">1</p>
+              <p class="mt-1 text-sm text-gray-600">Documented analytics internship experience.</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="profile-frame relative">
+          <div class="absolute -left-5 top-10 h-24 w-24 rounded-full bg-accent/15 blur-2xl"></div>
+          <div class="section-shell relative rounded-[2rem] p-6 shadow-soft">
+            <img
+              src="assets/images/dp.png"
+              alt="Portrait of Prakhar Purwar"
+              class="mx-auto h-80 w-full rounded-[1.5rem] object-cover object-top"
+            />
+            <div class="soft-panel mt-6 rounded-[1.5rem] p-5">
+              <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-pine">
+                Current Direction
+              </p>
+              <p class="mt-3 text-base leading-7 text-gray-700">
+                Strengthening skills in Python analytics, dashboard design, machine learning, and
+                business-focused problem solving.
+              </p>
+            </div>
           </div>
         </div>
       </section>
-      <section id="Skills" class="flex flex-col items-center mt-12">
-        <h2
-          class="text-3xl font-bold mb-4 hover:text-red-600 transition duration-300"
-        >
-          Skills
-        </h2>
-        <div
-          class="w-full max-w-5xl bg-white-100 rounded-2xl p-6 shadow-md hover:bg-gray-100 hover:shadow-lg hover:shadow-red-400 transition duration-500 overflow-hidden"
-        >
-          <marquee behavior="scroll" direction="left" scrollamount="6">
-            <div class="flex items-center gap-3">
-              <span
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
-                >Python</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
-                >C</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
-                >C++</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
-                >Java</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
-                >HTML</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
-                >CSS</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
-                >JavaScript</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-sm font-semibold"
-                >SQL</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >scikit-learn</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >Pandas</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >NumPy</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >Matplotlib</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >Seaborn</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >Plotly</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >TensorFlow</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >PyTorch</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >Flask</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >FastAPI</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >Django</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold"
-                >Tailwind CSS</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
-                >Git</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
-                >GitHub</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
-                >Power BI</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
-                >Jupyter Notebook</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
-                >Postman</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
-                >MySQL</span
-              >
-              <span
-                class="px-4 py-2 rounded-full bg-red-100 text-gray-700 text-sm font-semibold"
-                >PostgreSQL</span
-              >
+
+      <section id="about" class="reveal mt-16 section-shell rounded-[2rem] p-8 shadow-soft lg:p-10">
+        <div class="grid gap-8 lg:grid-cols-[1fr_1.1fr]">
+          <div>
+            <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">About</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-ink">Professional summary</h2>
+          </div>
+          <div class="space-y-4 text-lg leading-8 text-gray-700">
+            <p>
+              I am a B.Tech Computer Science student with a growing foundation in data science,
+              analytics, and full stack development. My work is centered on solving practical
+              problems through clean code, structured thinking, and usable interfaces.
+            </p>
+            <p>
+              I have built dashboards, predictive models, and automation projects using Python, SQL,
+              machine learning libraries, and modern frontend tools. My goal is to contribute to
+              teams that value clarity, performance, and evidence-based decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="internship" class="reveal mt-16 section-shell rounded-[2rem] p-8 shadow-soft lg:p-10">
+        <div class="mb-8 flex items-end justify-between gap-6">
+          <div>
+            <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">Internship</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-ink">Practical industry exposure</h2>
+          </div>
+        </div>
+        <article class="surface-card rounded-[1.75rem] p-7">
+          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Data Analytics</p>
+              <h3 class="mt-3 font-display text-2xl font-bold text-ink">Deloitte - Data Analytics Job Simulation</h3>
+              <p class="mt-2 text-base text-gray-700">Data Analyst Intern</p>
             </div>
-          </marquee>
+            <div class="flex flex-wrap gap-2 text-sm text-gray-600">
+              <span class="theme-chip rounded-full px-3 py-1">Jun 2025 - Jul 2025</span>
+              <span class="theme-chip rounded-full px-3 py-1">Python</span>
+              <span class="theme-chip rounded-full px-3 py-1">Tableau</span>
+            </div>
+          </div>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+            <div class="soft-panel rounded-[1.25rem] p-5">
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">Impact</p>
+              <p class="mt-3 text-base leading-7 text-gray-700">
+                Improved risk-identification accuracy by about 20% by building Python-based analytical workflows
+                across more than 10 business scenarios.
+              </p>
+            </div>
+            <div class="soft-panel rounded-[1.25rem] p-5">
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">Execution</p>
+              <p class="mt-3 text-base leading-7 text-gray-700">
+                Designed data-processing pipelines, integrated Tableau dashboards with backend workflows,
+                and delivered recommendations that improved visibility into risk and operations.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="projects" class="reveal mt-16">
+        <div class="mb-8 flex items-end justify-between gap-6">
+          <div>
+            <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">Projects</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-ink">Selected work</h2>
+          </div>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <article class="section-shell rounded-[2rem] p-7 shadow-soft">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Analytics</p>
+            <h3 class="mt-3 font-display text-2xl font-bold">Sales Visualization Dashboard</h3>
+            <p class="mt-4 text-base leading-7 text-gray-700">
+              Built an interactive Power BI dashboard analyzing multi-year retail sales across customer,
+              product, and regional performance to support faster decision-making.
+            </p>
+            <p class="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
+              Highlights
+            </p>
+            <ul class="mt-3 space-y-2 text-base leading-7 text-gray-700">
+              <li>Designed transformation and modeling logic using Power Query and DAX measures.</li>
+              <li>Delivered KPI-driven visuals that improved performance comparison across key business segments.</li>
+            </ul>
+            <div class="mt-5 flex flex-wrap gap-2 text-sm text-gray-600">
+              <span class="theme-chip rounded-full px-3 py-1">Power BI</span>
+              <span class="theme-chip rounded-full px-3 py-1">Dashboards</span>
+              <span class="theme-chip rounded-full px-3 py-1">Business Insights</span>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full bg-pine px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
+              >
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/PrakharPurwar12/powerBi-project"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+              >
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="section-shell rounded-[2rem] p-7 shadow-soft">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Data Analysis</p>
+            <h3 class="mt-3 font-display text-2xl font-bold">Socio-Economic Analysis of Indian Households</h3>
+            <p class="mt-4 text-base leading-7 text-gray-700">
+              Built an end-to-end Python analysis workflow over 139k+ household records to study
+              socio-economic patterns across 37 variables.
+            </p>
+            <p class="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
+              Highlights
+            </p>
+            <ul class="mt-3 space-y-2 text-base leading-7 text-gray-700">
+              <li>Removed features with more than 90% missing values to improve downstream model reliability.</li>
+              <li>Performed EDA, median imputation, and feature engineering to support predictive analysis.</li>
+            </ul>
+            <div class="mt-5 flex flex-wrap gap-2 text-sm text-gray-600">
+              <span class="theme-chip rounded-full px-3 py-1">Python</span>
+              <span class="theme-chip rounded-full px-3 py-1">Pandas</span>
+              <span class="theme-chip rounded-full px-3 py-1">EDA</span>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full bg-pine px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
+              >
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/PrakharPurwar12/python-github-repository"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+              >
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="section-shell rounded-[2rem] p-7 shadow-soft">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Automation</p>
+            <h3 class="mt-3 font-display text-2xl font-bold">Bargain Hunter Bot</h3>
+            <p class="mt-4 text-base leading-7 text-gray-700">
+              Built a Python-based chatbot for price comparison across e-commerce platforms and reduced
+              manual search time by about 70% through automated scraping.
+            </p>
+            <p class="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
+              Highlights
+            </p>
+            <ul class="mt-3 space-y-2 text-base leading-7 text-gray-700">
+              <li>Integrated NLP-style query handling to support conversational product discovery.</li>
+              <li>Designed a modular architecture for adding new marketplaces and APIs more easily.</li>
+            </ul>
+            <div class="mt-5 flex flex-wrap gap-2 text-sm text-gray-600">
+              <span class="theme-chip rounded-full px-3 py-1">Python</span>
+              <span class="theme-chip rounded-full px-3 py-1">Automation</span>
+              <span class="theme-chip rounded-full px-3 py-1">Data Collection</span>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full bg-pine px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
+              >
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/PrakharPurwar12/CHAT-BOT"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+              >
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="section-shell rounded-[2rem] p-7 shadow-soft">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Machine Learning</p>
+            <h3 class="mt-3 font-display text-2xl font-bold">Car Price Prediction Model</h3>
+            <p class="mt-4 text-base leading-7 text-gray-700">
+              Developed a Random Forest-based car price prediction model and deployed it as a Streamlit
+              app for real-time user-driven price estimation.
+            </p>
+            <p class="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">
+              Highlights
+            </p>
+            <ul class="mt-3 space-y-2 text-base leading-7 text-gray-700">
+              <li>Improved forecast quality through hyperparameter tuning and iterative evaluation.</li>
+              <li>Delivered an end-to-end workflow using Python, Pandas, scikit-learn, and Streamlit.</li>
+            </ul>
+            <div class="mt-5 flex flex-wrap gap-2 text-sm text-gray-600">
+              <span class="theme-chip rounded-full px-3 py-1">scikit-learn</span>
+              <span class="theme-chip rounded-full px-3 py-1">Regression</span>
+              <span class="theme-chip rounded-full px-3 py-1">Model Evaluation</span>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full bg-pine px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
+              >
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/PrakharPurwar12/Car-Price-Prediction-Model"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-full border border-ink/15 px-4 py-2 text-sm font-semibold text-ink transition hover:border-accent hover:text-accent"
+              >
+                GitHub
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="reveal mt-16 section-shell rounded-[2rem] p-8 shadow-soft lg:p-10">
+        <div class="mb-8">
+          <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">Skills</p>
+          <h2 class="mt-3 font-display text-3xl font-bold text-ink">Core toolkit</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div class="surface-card rounded-[1.5rem] p-5">
+            <h3 class="font-display text-lg font-bold">Languages</h3>
+            <p class="mt-3 text-gray-700">Python, C, C++, Java, JavaScript, SQL, HTML, CSS</p>
+          </div>
+          <div class="surface-card rounded-[1.5rem] p-5">
+            <h3 class="font-display text-lg font-bold">Data & ML</h3>
+            <p class="mt-3 text-gray-700">Pandas, NumPy, Matplotlib, Seaborn, Plotly, TensorFlow, PyTorch, scikit-learn</p>
+          </div>
+          <div class="surface-card rounded-[1.5rem] p-5">
+            <h3 class="font-display text-lg font-bold">Frameworks</h3>
+            <p class="mt-3 text-gray-700">Flask, FastAPI, Django, Tailwind CSS</p>
+          </div>
+          <div class="surface-card rounded-[1.5rem] p-5">
+            <h3 class="font-display text-lg font-bold">Tools</h3>
+            <p class="mt-3 text-gray-700">Git, GitHub, Power BI, Jupyter Notebook, Postman, MySQL, PostgreSQL</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="achievements" class="reveal mt-16 section-shell rounded-[2rem] p-8 shadow-soft lg:p-10">
+        <div class="mb-8">
+          <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">Achievements</p>
+          <h2 class="mt-3 font-display text-3xl font-bold text-ink">Coding consistency and problem solving</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="surface-card rounded-[1.5rem] p-6">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">Coding Practice</p>
+            <h3 class="mt-3 font-display text-2xl font-bold text-ink">LeetCode</h3>
+            <p class="mt-3 text-base leading-7 text-gray-700">
+              Solved 75+ questions across arrays, strings, recursion, binary search, and core data structures.
+            </p>
+            <p class="mt-4 text-sm text-gray-500">75+ problems completed</p>
+          </article>
+          <article class="surface-card rounded-[1.5rem] p-6">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">Coding Practice</p>
+            <h3 class="mt-3 font-display text-2xl font-bold text-ink">CodeStudio</h3>
+            <p class="mt-3 text-base leading-7 text-gray-700">
+              Completed 50+ practice problems to strengthen DSA fundamentals and structured problem-solving speed.
+            </p>
+            <p class="mt-4 text-sm text-gray-500">50+ problems completed</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="extracurricular" class="reveal mt-16 section-shell rounded-[2rem] p-8 shadow-soft lg:p-10">
+        <div class="mb-8">
+          <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">Extracurricular</p>
+          <h2 class="mt-3 font-display text-3xl font-bold text-ink">Team participation and competitive exposure</h2>
+        </div>
+        <article class="surface-card rounded-[1.5rem] p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">Hackathon</p>
+          <h3 class="mt-3 font-display text-2xl font-bold text-ink">Binary Blitz Web Hackathon</h3>
+          <p class="mt-3 text-base leading-7 text-gray-700">
+            Participated in a team-based hackathon and contributed to the development of a web solution
+            under competitive time constraints.
+          </p>
+          <p class="mt-4 text-sm text-gray-500">March 2024</p>
+        </article>
+      </section>
+
+      <section id="training" class="reveal mt-16 section-shell rounded-[2rem] p-8 shadow-soft lg:p-10">
+        <div class="mb-8">
+          <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">Training</p>
+          <h2 class="mt-3 font-display text-3xl font-bold text-ink">Structured learning experience</h2>
+        </div>
+        <article class="surface-card rounded-[1.5rem] p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">Summer Training</p>
+          <h3 class="mt-3 font-display text-2xl font-bold text-ink">Machine Learning Summer Training</h3>
+          <p class="mt-3 text-base leading-7 text-gray-700">
+            Completed summer training at Lovely Professional University focused on building and deploying
+            a machine learning project using Python, scikit-learn, and Streamlit.
+          </p>
+          <p class="mt-4 text-sm text-gray-500">June 2025 - July 2025</p>
+        </article>
+      </section>
+
+      <section id="certificates" class="reveal mt-16">
+        <div class="mb-8">
+          <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">Certificates</p>
+          <h2 class="mt-3 font-display text-3xl font-bold text-ink">Recent learning</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="section-shell rounded-[2rem] p-5 shadow-soft">
+            <img src="assets/images/image.png" alt="Programming for Data Science certificate" class="h-40 w-full rounded-[1.25rem] object-cover" />
+            <h3 class="mt-4 font-display text-xl font-bold">Programming for Data Science</h3>
+            <p class="mt-1 text-sm font-semibold text-accent">Coursera | 2025</p>
+            <p class="mt-3 text-gray-700">Focused on cleaning, exploring, and visualizing data with practical datasets.</p>
+          </article>
+          <article class="section-shell rounded-[2rem] p-5 shadow-soft">
+            <img src="assets/images/FreeCodeCamp.png" alt="Responsive Web Design certificate" class="h-40 w-full rounded-[1.25rem] object-cover" />
+            <h3 class="mt-4 font-display text-xl font-bold">Responsive Web Design</h3>
+            <p class="mt-1 text-sm font-semibold text-accent">freeCodeCamp | 2024</p>
+            <p class="mt-3 text-gray-700">Covered semantic HTML, layout systems, and responsive front-end fundamentals.</p>
+          </article>
+          <article class="section-shell rounded-[2rem] p-5 shadow-soft">
+            <img src="assets/images/deloitte-certificate.png" alt="Deloitte Data Analytics Job Simulation certificate" class="h-40 w-full rounded-[1.25rem] object-cover" />
+            <h3 class="mt-4 font-display text-xl font-bold">Data Analytics Job Simulation</h3>
+            <p class="mt-1 text-sm font-semibold text-accent">Deloitte | 2025</p>
+            <p class="mt-3 text-gray-700">Applied business-focused data analysis tasks and converted findings into decisions.</p>
+          </article>
+          <article class="section-shell rounded-[2rem] p-5 shadow-soft">
+            <img src="assets/images/google-certificate.png" alt="The Bits and Bytes of Computer Networking certificate" class="h-40 w-full rounded-[1.25rem] object-cover" />
+            <h3 class="mt-4 font-display text-xl font-bold">Bits and Bytes of Networking</h3>
+            <p class="mt-1 text-sm font-semibold text-accent">Coursera | 2024</p>
+            <p class="mt-3 text-gray-700">Learned core networking concepts including DNS, routing, protocols, and troubleshooting.</p>
+          </article>
+          <article class="section-shell rounded-[2rem] p-5 shadow-soft md:col-span-2 xl:col-span-1">
+            <img src="assets/images/toc.png" alt="Computational Theory certificate" class="h-40 w-full rounded-[1.25rem] object-cover" />
+            <h3 class="mt-4 font-display text-xl font-bold">Computational Theory</h3>
+            <p class="mt-1 text-sm font-semibold text-accent">Infosys Springboard | 2025</p>
+            <p class="mt-3 text-gray-700">Studied formal languages, automata, and the foundations of language recognition.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="reveal mt-16 section-shell rounded-[2rem] p-8 shadow-soft lg:p-10">
+        <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div>
+            <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-accent">Education</p>
+            <h2 class="mt-3 font-display text-3xl font-bold text-ink">Academic foundation</h2>
+            <p class="mt-4 max-w-sm text-base leading-7 text-gray-600">
+              Formal grounding in computer science with a growing emphasis on analytics, machine learning, and applied software work.
+            </p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              <div class="edu-metric rounded-[1.35rem] p-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500">Degree</p>
+                <p class="mt-2 text-lg font-semibold text-ink">B.Tech, Computer Science</p>
+              </div>
+              <div class="edu-metric rounded-[1.35rem] p-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-gray-500">Focus</p>
+                <p class="mt-2 text-lg font-semibold text-ink">Analytics, ML, software fundamentals</p>
+              </div>
+            </div>
+          </div>
+          <div class="education-panel surface-card rounded-[1.75rem] p-6 md:p-7">
+            <span class="education-orb" aria-hidden="true"></span>
+            <div class="education-scroll pl-8">
+              <div class="grid gap-8 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
+                <div>
+                  <p class="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Current Program</p>
+                  <h3 class="mt-3 font-display text-3xl font-bold leading-tight text-ink">
+                    Lovely Professional University
+                  </h3>
+                  <p class="mt-3 max-w-md text-lg leading-8 text-gray-700">
+                    Bachelor of Technology in Computer Science and Engineering
+                  </p>
+                  <div class="mt-6 flex flex-wrap gap-3 text-sm text-gray-600">
+                    <span class="theme-chip rounded-full px-4 py-2">CGPA: 7.24</span>
+                    <span class="theme-chip rounded-full px-4 py-2">Aug 2023 - Present</span>
+                    <span class="theme-chip rounded-full px-4 py-2">Punjab, India</span>
+                  </div>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold uppercase tracking-[0.16em] text-gray-500">Academic highlights</p>
+                  <div class="mt-4 flex flex-wrap gap-3 text-sm text-gray-700">
+                    <span class="theme-chip rounded-full px-4 py-2">Data Structures</span>
+                    <span class="theme-chip rounded-full px-4 py-2">DBMS</span>
+                    <span class="theme-chip rounded-full px-4 py-2">Statistics</span>
+                    <span class="theme-chip rounded-full px-4 py-2">Machine Learning</span>
+                    <span class="theme-chip rounded-full px-4 py-2">Python for Analysis</span>
+                    <span class="theme-chip rounded-full px-4 py-2">Web Technologies</span>
+                  </div>
+                  <div class="mt-6 grid gap-3 sm:grid-cols-2">
+                    <div class="edu-metric rounded-[1.2rem] p-4">
+                      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">Strength</p>
+                      <p class="mt-2 text-sm leading-6 text-gray-700">Built around structured problem solving and technical fundamentals.</p>
+                    </div>
+                    <div class="edu-metric rounded-[1.2rem] p-4">
+                      <p class="text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">Direction</p>
+                      <p class="mt-2 text-sm leading-6 text-gray-700">Moving toward data analysis, machine learning, and practical product thinking.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 space-y-4">
+                <article class="edu-metric rounded-[1.35rem] p-5">
+                  <p class="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Class 12</p>
+                  <div class="mt-3 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h4 class="font-display text-xl font-bold text-ink">Mahant Bhagwat Vishal Inter College</h4>
+                      <p class="mt-2 text-sm leading-6 text-gray-600">Intermediate</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 text-sm text-gray-600">
+                      <span class="theme-chip rounded-full px-4 py-2">Percentage: 67.66%</span>
+                      <span class="theme-chip rounded-full px-4 py-2">Apr 2020 - Mar 2022</span>
+                      <span class="theme-chip rounded-full px-4 py-2">Kadaura, Jalaun</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="edu-metric rounded-[1.35rem] p-5">
+                  <p class="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Class 10</p>
+                  <div class="mt-3 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                    <div>
+                      <h4 class="font-display text-xl font-bold text-ink">Dr B R Ambedkar High School</h4>
+                      <p class="mt-2 text-sm leading-6 text-gray-600">Matriculation</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 text-sm text-gray-600">
+                      <span class="theme-chip rounded-full px-4 py-2">Percentage: 79.59%</span>
+                      <span class="theme-chip rounded-full px-4 py-2">Apr 2018 - Mar 2020</span>
+                      <span class="theme-chip rounded-full px-4 py-2">Kadaura, Jalaun</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal mt-16 overflow-hidden rounded-[2.25rem] bg-pine px-8 py-10 text-white shadow-soft lg:px-10">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div class="relative">
+            <div class="absolute -left-8 top-0 h-36 w-36 rounded-full bg-white/5 blur-3xl"></div>
+            <p class="font-display text-sm font-bold uppercase tracking-[0.2em] text-[#f6c8b0]">Contact</p>
+            <h2 class="mt-4 max-w-xl font-display text-4xl font-bold leading-tight text-white lg:text-5xl">
+              Open to internships and meaningful project work.
+            </h2>
+            <p class="mt-5 max-w-xl text-lg leading-8 text-white/80">
+              For internships, analytics roles, or collaboration, reach out directly.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-white/12 to-white/4"></div>
+            <div class="relative rounded-[2rem] border border-white/10 bg-white/10 p-7 backdrop-blur">
+              <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[#f6c8b0]">Get In Touch</p>
+              <a
+                href="mailto:purwarprakhar00@gmail.com"
+                class="mt-4 block font-display text-2xl font-bold leading-tight text-white underline decoration-white/20 underline-offset-4 transition hover:decoration-white/60"
+              >
+                purwarprakhar00@gmail.com
+              </a>
+              <p class="mt-3 text-sm leading-6 text-white/70">
+                Email is the fastest way to connect.
+              </p>
+              <div class="mt-7 flex flex-wrap gap-4 text-sm font-semibold">
+                <a
+                  href="https://www.linkedin.com/in/prakharpurwar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full border border-white/20 px-5 py-2.5 transition hover:bg-white hover:text-pine"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/PrakharPurwar12"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full border border-white/20 px-5 py-2.5 transition hover:bg-white hover:text-pine"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="assets/docs/Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="rounded-full border border-white/20 px-5 py-2.5 transition hover:bg-white hover:text-pine"
+                >
+                  Resume
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-    <section
-      id="contact"
-      class="py-16 bg-transparent dark:bg-gray-100 rounded-2xl mt-12 px-6 max-w-5xl mx-auto hover:shadow-lg hover:shadow-black-500 transition duration-500"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          class="text-3xl font-bold mt-5 hover:text-red-600 transition pb-12 duration-300 text-center"
-        >
-          Get in Touch
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-8 text-center">
-          Interested in collaborating or discussing data science or full-stack
-          opportunities? Reach out!
-        </p>
-        <div class="max-w-lg mx-auto text-center">
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
-            Please contact me directly via email:
-          </p>
-          <a
-            href="mailto:purwarprakhar00@gmail.com"
-            class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline hover:scale-110 text-lg"
-            >purwarprakhar00@gmail.com</a
-          >
-        </div>
-        <div class="flex justify-center space-x-6 mt-8">
-          <a
-            href="mailto:purwarprakhar00@gmail.com"
-            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all transform hover:scale-110"
-            title="Email"
-          >
-            Email
-          </a>
-          <a
-            href="https://www.linkedin.com/in/prakharpurwar/"
-            target="_blank"
-            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all transform hover:scale-110"
-            title="LinkedIn"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/PrakharPurwar12"
-            target="_blank"
-            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all transform hover:scale-110"
-            title="GitHub"
-          >
-            GitHub
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <footer
-      class="text-center h-16 bg-gray-400 items-center pt-4 text-bold mt-8"
-    >
-      © 2026 Prakhar Purwar. All rights reserved.
+    <footer class="border-t border-black/5 px-6 py-6 text-center text-sm text-gray-600">
+      &copy; <span id="footer-year">2026</span> Prakhar Purwar. Built to present work with clarity and professionalism.
     </footer>
   </body>
 </html>

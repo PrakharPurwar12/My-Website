@@ -1,89 +1,95 @@
-# Portfolio Website
+# Prakhar Purwar Portfolio
 
-This repository hosts my personal portfolio website, built to present my academic background, technical expertise, and project experience in data science and full stack development. The portfolio emphasizes clean UI design, responsiveness, and clarity while showcasing data-driven and software-oriented work.
-
----
+This repository contains my personal portfolio website. It is designed to present my profile for data analyst, data science internship, and entry-level software opportunities through a clean, responsive, and project-focused interface.
 
 ## Overview
 
-The portfolio acts as a centralized professional profile that includes:
+The portfolio highlights:
 
-- Personal introduction and career focus  
-- Educational background and relevant coursework  
-- Academic and independent projects  
-- Technical skill set across data science and full stack development  
-- Certifications and continuous learning  
-- Contact and professional networking links  
+- professional summary and target role
+- internship experience
+- selected projects with tech stack and impact
+- skills across analytics, machine learning, and development
+- extracurricular activities and coding practice
+- training, certificates, education, and contact information
 
-The goal is to provide recruiters and collaborators with a concise yet comprehensive view of my technical capabilities and growth trajectory.
-
----
+The goal is to keep the portfolio visually polished while making it easy for recruiters and collaborators to quickly evaluate my background and work.
 
 ## Tech Stack
 
-The website is developed using the following technologies:
+- HTML
+- Tailwind CSS via CDN
+- Custom CSS
+- Vanilla JavaScript
 
-- HTML for semantic structure and content  
-- Tailwind CSS for modern, responsive styling  
-- JavaScript for basic interactivity  
-- Git and GitHub for version control and deployment  
-- GitHub Pages for hosting and continuous deployment  
+## Features
 
----
-
-## Key Features
-
-- Fully responsive layout optimized for desktop and mobile devices  
-- Clean, minimal, and professional user interface  
-- Structured project showcase with clear descriptions  
-- Dedicated skills section covering data science, machine learning, and full stack tools  
-- Public deployment with automatic updates via GitHub Pages  
-
----
+- responsive layout for desktop and mobile
+- dark mode toggle
+- simplified desktop navigation with dropdown
+- scroll reveal animation
+- structured project cards with GitHub and demo actions
+- organized sections for internship, achievements, extracurriculars, training, certificates, and education
 
 ## Project Structure
 
-The repository follows a simple and scalable structure:
+```text
+Portfolio/
+|-- index.html
+|-- css/
+|   `-- style.css
+|-- js/
+|   `-- script.js
+|-- assets/
+|   |-- docs/
+|   |   `-- Resume.pdf
+|   `-- images/
+|       |-- dp.png
+|       |-- image.png
+|       |-- FreeCodeCamp.png
+|       |-- deloitte-certificate.png
+|       |-- google-certificate.png
+|       `-- toc.png
+|-- screenshots/
+|-- .gitignore
+`-- README.md
+```
 
-- `index.html` as the main entry point  
-- Asset files such as images and resume documents stored in the root directory  
-- Styling handled primarily through the Tailwind CSS CDN  
-- Modular section-based layout for future expansion  
+## Sections Included
 
----
+- Hero
+- About
+- Internship
+- Projects
+- Skills
+- Achievements
+- Extracurricular Activities
+- Training
+- Certificates
+- Education
+- Contact
+
+## Running Locally
+
+This is a static portfolio website, so no build step is required.
+
+Open `index.html` directly in a browser, or use a local live server extension in your editor for a better development workflow.
 
 ## Deployment
 
-The portfolio is deployed using GitHub Pages.  
-Any changes pushed to the `main` branch are automatically reflected on the live website.
+The portfolio is intended for GitHub Pages deployment.
 
-Live Website:  
+Live website:
 https://prakharpurwar12.github.io/My-Website/
 
----
+## Notes
 
-## Future Enhancements
-
-Planned improvements include:
-
-- Adding JavaScript-based animations and transitions  
-- Linking live demos and GitHub repositories for projects  
-- Migrating to a component-based framework if required  
-- Backend integration for contact form handling  
-- Performance optimization and SEO enhancements  
-
----
-
-## About Me
-
-I am a Computer Science and Engineering undergraduate with a specialization in data science. My interests lie at the intersection of data analytics, machine learning, and full stack development. I focus on building scalable, data-driven applications that translate insights into real-world impact.
-
----
+- resume and images are stored inside the `assets/` directory
+- local screenshots are ignored through `.gitignore`
+- demo links for some projects can be updated later when live deployments are available
 
 ## Contact
 
-Email: purwarprakhar00@gmail.com  
-LinkedIn: https://www.linkedin.com/in/prakharpurwar/  
-GitHub: https://github.com/PrakharPurwar12  
-
----
+- Email: `purwarprakhar00@gmail.com`
+- LinkedIn: `https://www.linkedin.com/in/prakharpurwar/`
+- GitHub: `https://github.com/PrakharPurwar12`

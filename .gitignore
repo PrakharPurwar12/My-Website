@@ -1,0 +1,12 @@
+# Local screenshots and notes
+screenshots/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+assets
