@@ -8,6 +8,20 @@ body {
   transition: background 250ms ease, color 250ms ease;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
 html.dark body {
   background:
     radial-gradient(circle at top left, rgba(194, 106, 61, 0.12), transparent 28%),
@@ -332,11 +346,29 @@ html.dark .edu-metric {
     font-size: 15px;
   }
 
+  .font-display {
+    letter-spacing: -0.02em;
+  }
+
   nav .mx-auto {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 0.85rem;
-    padding-bottom: 0.85rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  nav .text-xl {
+    font-size: 1.05rem;
+  }
+
+  nav .gap-3 {
+    gap: 0.55rem;
+  }
+
+  #theme-toggle,
+  #menu-button {
+    height: 2.7rem;
+    width: 2.7rem;
   }
 
   #mobile-menu {
@@ -351,7 +383,7 @@ html.dark .edu-metric {
 
   #mobile-menu .nav-link {
     border-radius: 0.9rem;
-    padding: 0.8rem 0.9rem;
+    padding: 0.78rem 0.9rem;
     background: rgba(255, 255, 255, 0.5);
   }
 
@@ -362,25 +394,74 @@ html.dark .edu-metric {
   main {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 1.5rem;
+    padding-top: 1.25rem;
     padding-bottom: 4rem;
   }
 
+  main#home,
+  #home {
+    max-width: 100%;
+  }
+
+  #home > section:first-child {
+    gap: 1.2rem;
+  }
+
+  main > section,
+  main > div,
+  main > section + section {
+    margin-top: 3.25rem;
+  }
+
+  main > section:first-child {
+    margin-top: 0;
+  }
+
+  main section > .mb-8,
+  main section > .mb-10 {
+    margin-bottom: 1.4rem;
+  }
+
   .profile-frame::after {
-    inset: 0.9rem;
+    inset: 0.75rem;
+  }
+
+  .profile-frame {
+    order: -1;
+  }
+
+  .profile-frame .section-shell {
+    padding: 0.85rem;
   }
 
   .profile-frame img {
-    height: 18rem;
+    height: 14.25rem;
+    border-radius: 1.2rem;
   }
 
   h1 {
-    font-size: 2.45rem !important;
-    line-height: 1.05 !important;
+    font-size: 2.15rem !important;
+    line-height: 1.02 !important;
   }
 
   h2 {
+    font-size: 2rem !important;
     line-height: 1.15;
+  }
+
+  h3 {
+    line-height: 1.15;
+  }
+
+  p.text-lg,
+  .text-lg {
+    font-size: 1rem !important;
+    line-height: 1.8rem !important;
+  }
+
+  .rounded-\[2rem\],
+  .rounded-\[2\.25rem\] {
+    border-radius: 1.5rem;
   }
 
   .section-shell,
@@ -388,11 +469,161 @@ html.dark .edu-metric {
     border-radius: 1.4rem;
   }
 
+  .section-shell {
+    padding: 1.25rem;
+  }
+
+  .surface-card {
+    padding: 1.15rem;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+  }
+
   .section-shell:hover,
   .surface-card:hover,
   a.rounded-full:hover,
   button.rounded-full:hover {
     transform: none;
+  }
+
+  .grid.gap-10,
+  .grid.gap-8,
+  .grid.gap-6 {
+    gap: 1rem;
+  }
+
+  .mt-10 {
+    margin-top: 1.75rem !important;
+  }
+
+  .mt-8 {
+    margin-top: 1.35rem !important;
+  }
+
+  .mt-6 {
+    margin-top: 1rem !important;
+  }
+
+  .mt-5,
+  .mt-4 {
+    margin-top: 0.85rem !important;
+  }
+
+  .hero-actions,
+  .mt-8.flex.flex-wrap.gap-4,
+  .mt-6.flex.flex-wrap.gap-3,
+  .mt-7.flex.flex-wrap.gap-4,
+  .mt-6.flex.flex-wrap.gap-4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .mt-8.flex.flex-wrap.gap-4 a,
+  .mt-6.flex.flex-wrap.gap-3 a,
+  .mt-7.flex.flex-wrap.gap-4 a,
+  .mt-6.flex.flex-wrap.gap-4 a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #home .font-display.text-sm.font-bold.uppercase.tracking-\[0\.24em\].text-accent {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+  }
+
+  #home p.max-w-2xl,
+  #home p.text-lg {
+    max-width: 100%;
+    font-size: 0.94rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  #home .mt-8.flex.flex-wrap.gap-4 {
+    margin-top: 1.1rem !important;
+  }
+
+  #home .rounded-full {
+    min-height: 3rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .mt-10.grid.gap-4.sm\:grid-cols-3 {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  #home .mt-10.grid.gap-4.sm\:grid-cols-3 > div {
+    border-radius: 1.1rem;
+    padding: 0.95rem 1rem;
+  }
+
+  #home .mt-10.grid.gap-4.sm\:grid-cols-3 p.text-3xl {
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+
+  #home .mt-10.grid.gap-4.sm\:grid-cols-3 p.mt-1 {
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    line-height: 1.35rem;
+  }
+
+  #home .soft-panel {
+    margin-top: 0.85rem;
+    border-radius: 1.1rem;
+    padding: 0.95rem;
+  }
+
+  #home .soft-panel p.text-base {
+    font-size: 0.93rem;
+    line-height: 1.6rem;
+  }
+
+  #about .space-y-4,
+  #projects ul,
+  #internship .grid,
+  #skills .grid,
+  #achievements .grid,
+  #certificates .grid {
+    gap: 0.9rem;
+  }
+
+  #projects article,
+  #certificates article,
+  #skills .surface-card,
+  #achievements .surface-card,
+  #extracurricular .surface-card,
+  #training .surface-card {
+    padding: 1.1rem;
+  }
+
+  #projects h3,
+  #certificates h3,
+  #achievements h3,
+  #extracurricular h3,
+  #training h3,
+  #education h3 {
+    font-size: 1.4rem;
+  }
+
+  #projects ul {
+    font-size: 0.96rem;
+    line-height: 1.65rem;
+  }
+
+  #projects .theme-chip,
+  #internship .theme-chip,
+  #education .theme-chip {
+    padding: 0.55rem 0.85rem;
+  }
+
+  #certificates img {
+    height: 11rem;
   }
 
   .education-scroll {
@@ -416,23 +647,97 @@ html.dark .edu-metric {
     padding-left: 1.6rem;
   }
 
+  #education .grid.gap-8 {
+    gap: 1.15rem;
+  }
+
+  #education .edu-metric {
+    padding: 1rem;
+  }
+
+  #education .space-y-4 > * + * {
+    margin-top: 0.8rem;
+  }
+
+  #education article .flex.flex-col.gap-4 {
+    gap: 0.8rem;
+  }
+
+  #education article .flex.flex-wrap.gap-3 {
+    gap: 0.55rem;
+  }
+
   .theme-chip {
     font-size: 0.85rem;
   }
 
   #contact {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
   }
 
   #contact h2 {
-    font-size: 2.2rem !important;
+    font-size: 2rem !important;
   }
 
   #contact .rounded-\[2rem\] {
     border-radius: 1.4rem;
+  }
+
+  #contact .grid {
+    gap: 1rem;
+  }
+
+  #contact .relative.rounded-\[2rem\] {
+    padding: 1.15rem;
+    overflow: hidden;
+  }
+
+  #contact .absolute.inset-0.rounded-\[2rem\] {
+    border-radius: 1.4rem;
+  }
+
+  #contact a[href^="mailto:"] {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-size: 1.55rem;
+    line-height: 1.2;
+  }
+
+  #contact p {
+    max-width: 100%;
+  }
+
+  #contact .mt-7.flex.flex-wrap.gap-4 {
+    gap: 0.65rem;
+  }
+
+  #contact .mt-7.flex.flex-wrap.gap-4 a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #contact .text-sm.leading-6.text-white\/70 {
+    line-height: 1.45rem;
+  }
+
+  #contact,
+  #contact * {
+    min-width: 0;
+  }
+
+  #projects,
+  #skills,
+  #achievements,
+  #extracurricular,
+  #training,
+  #certificates,
+  #education,
+  #contact {
+    overflow: hidden;
   }
 
   #contact .rounded-full {
@@ -448,5 +753,11 @@ html.dark .edu-metric {
   #more-menu {
     min-width: 12rem;
     right: 0;
+  }
+
+  footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    line-height: 1.6;
   }
 }
