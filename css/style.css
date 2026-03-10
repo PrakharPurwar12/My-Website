@@ -341,6 +341,49 @@ html.dark .edu-metric {
   transform: translateY(0);
 }
 
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 2px solid rgba(194, 106, 61, 0.9);
+  background: transparent;
+  pointer-events: none;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 9999;
+  opacity: 0;
+  transition:
+    opacity 180ms ease,
+    width 180ms ease,
+    height 180ms ease,
+    border-color 180ms ease;
+  will-change: transform, opacity;
+  contain: layout style paint;
+  backface-visibility: hidden;
+}
+
+.cursor-ring.is-visible {
+  opacity: 1;
+}
+
+.cursor-ring.is-active {
+  width: 30px;
+  height: 30px;
+  border-color: rgba(31, 58, 52, 0.85);
+}
+
+html.dark .cursor-ring {
+  border-color: rgba(246, 200, 176, 0.9);
+}
+
+@media (pointer: coarse) {
+  .cursor-ring {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   body {
     font-size: 15px;
