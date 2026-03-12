@@ -34,6 +34,12 @@ html.dark body {
   font-family: "Space Grotesk", sans-serif;
 }
 
+.brand-signature {
+  letter-spacing: -0.045em;
+  text-rendering: geometricPrecision;
+}
+
+
 .text-ink {
   color: #111827;
 }
@@ -156,6 +162,18 @@ html.dark footer {
   color: #374151;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html.dark .more-menu-link {
   color: #e2e8f0;
 }
@@ -185,6 +203,307 @@ html.dark .theme-icon {
 
 .hover\:text-pine:hover {
   color: #1f3a34;
+}
+
+.hamburglar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  overflow: hidden;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.theme-ring-toggle .path-burger {
+  opacity: 0;
+}
+
+.theme-ring-toggle .burger-ring {
+  inset: 1px;
+}
+
+.theme-ring-toggle .theme-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.burger-icon,
+.burger-ring,
+.path-burger,
+.animate-path {
+  position: absolute;
+  inset: 0;
+}
+
+.burger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.burger-container {
+  position: relative;
+  width: 1.35rem;
+  height: 0.9rem;
+}
+
+.burger-bun-top,
+.burger-bun-bot,
+.burger-filling {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 1.35rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.burger-bun-top {
+  top: 0;
+  transform-origin: calc(100% - 2px) 1px;
+}
+
+.burger-filling {
+  top: 0.39rem;
+}
+
+.burger-bun-bot {
+  bottom: 0;
+  transform-origin: calc(100% - 2px) 1px;
+}
+
+.svg-ring {
+  width: 100%;
+  height: 100%;
+}
+
+.path {
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  stroke-linejoin: round;
+}
+
+.path-burger {
+  mask: url(#more-menu-mask);
+  -webkit-mask: url(#more-menu-mask);
+}
+
+#more-button {
+  margin-left: 0.1rem;
+}
+
+nav .hamburglar > span {
+  pointer-events: none;
+}
+
+.path-rotation {
+  width: 50%;
+  height: 50%;
+  margin: 50% 50% 0 0;
+  transform: rotate(0deg);
+  transform-origin: 100% 0;
+}
+
+.path-rotation::before {
+  content: "";
+  display: block;
+  width: calc(100% - 4px);
+  height: 100%;
+  margin-right: 4px;
+  background: currentColor;
+}
+
+.hamburglar.is-open .path {
+  animation: dash-in 0.6s linear forwards;
+}
+
+.hamburglar.is-closed .path {
+  animation: dash-out 0.6s linear forwards;
+}
+
+.hamburglar.is-open .animate-path {
+  animation: rotate-in 0.6s linear forwards;
+}
+
+.hamburglar.is-closed .animate-path {
+  animation: rotate-out 0.6s linear forwards;
+}
+
+.hamburglar.is-open .burger-bun-top {
+  animation: bun-top-in 0.6s linear forwards;
+}
+
+.hamburglar.is-open .burger-bun-bot {
+  animation: bun-bot-in 0.6s linear forwards;
+}
+
+.hamburglar.is-closed .burger-bun-top {
+  animation: bun-top-out 0.6s linear forwards;
+}
+
+.hamburglar.is-closed .burger-bun-bot {
+  animation: bun-bot-out 0.6s linear forwards;
+}
+
+.hamburglar.is-open .burger-filling {
+  animation: burger-fill-in 0.6s linear forwards;
+}
+
+.hamburglar.is-closed .burger-filling {
+  animation: burger-fill-out 0.6s linear forwards;
+}
+
+@keyframes rotate-out {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-in {
+  0% {
+    transform: rotate(360deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes dash-in {
+  0% {
+    stroke-dashoffset: 240;
+  }
+  40% {
+    stroke-dashoffset: 240;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash-out {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 240;
+  }
+  100% {
+    stroke-dashoffset: 240;
+  }
+}
+
+@keyframes bun-top-out {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: translateX(-0.22rem) rotate(-60deg);
+  }
+  100% {
+    transform: translateX(-0.22rem) translateY(1px) rotate(-45deg);
+  }
+}
+
+@keyframes bun-bot-out {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  80% {
+    transform: translateX(-0.22rem) rotate(60deg);
+  }
+  100% {
+    transform: translateX(-0.22rem) rotate(45deg);
+  }
+}
+
+@keyframes bun-top-in {
+  0% {
+    transform: translateX(-0.22rem) translateY(1px) rotate(-45deg);
+  }
+  20% {
+    transform: translateX(-0.22rem) rotate(-60deg);
+  }
+  80% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bun-bot-in {
+  0% {
+    transform: translateX(-0.22rem) rotate(45deg);
+  }
+  20% {
+    transform: translateX(-0.22rem) rotate(60deg);
+  }
+  80% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes burger-fill-in {
+  0% {
+    width: 0;
+    left: 1.35rem;
+  }
+  40% {
+    width: 0;
+    left: 1.5rem;
+  }
+  80% {
+    width: 1.35rem;
+    left: -0.25rem;
+  }
+  100% {
+    width: 1.35rem;
+    left: 0;
+  }
+}
+
+@keyframes burger-fill-out {
+  0% {
+    width: 1.35rem;
+    left: 0;
+  }
+  20% {
+    width: 1.55rem;
+    left: -0.25rem;
+  }
+  40% {
+    width: 0;
+    left: 1.5rem;
+  }
+  100% {
+    width: 0;
+    left: 1.35rem;
+  }
 }
 
 .nav-link {
@@ -267,6 +586,12 @@ button.rounded-full:active {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 38%);
   pointer-events: none;
   opacity: 0.7;
+}
+
+@media (min-width: 1024px) {
+  .profile-frame {
+    transform: translateY(-5rem);
+  }
 }
 
 .project-card {
@@ -482,6 +807,10 @@ html.dark .edu-metric {
   transform: translateY(0);
 }
 
+main section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
 .cursor-ring {
   position: fixed;
   left: 0;
@@ -545,6 +874,11 @@ html.dark .cursor-ring {
     font-size: 1.05rem;
   }
 
+  .brand-signature {
+    font-size: 1.5rem !important;
+    letter-spacing: -0.04em;
+  }
+
   nav .gap-3 {
     gap: 0.55rem;
   }
@@ -553,6 +887,11 @@ html.dark .cursor-ring {
   #menu-button {
     height: 2.7rem;
     width: 2.7rem;
+  }
+
+  .hamburglar {
+    width: 2.7rem;
+    height: 2.7rem;
   }
 
   #mobile-menu {
@@ -580,6 +919,10 @@ html.dark .cursor-ring {
     padding-right: 1rem;
     padding-top: 1.25rem;
     padding-bottom: 4rem;
+  }
+
+  main section[id] {
+    scroll-margin-top: 5.75rem;
   }
 
   main#home,

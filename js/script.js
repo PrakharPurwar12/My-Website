@@ -40,8 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle.addEventListener("click", () => {
       const isDark = root.classList.toggle("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
+      themeToggle.classList.remove("is-open", "is-closed");
+      void themeToggle.offsetWidth;
+      themeToggle.classList.add(isDark ? "is-closed" : "is-open");
       syncThemeToggle();
     });
+  }
+
+  if (themeToggle) {
+    themeToggle.classList.add(root.classList.contains("dark") ? "is-closed" : "is-open");
   }
 
   syncThemeToggle();
@@ -65,12 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
     moreButton.addEventListener("click", () => {
       const isExpanded = moreButton.getAttribute("aria-expanded") === "true";
       moreButton.setAttribute("aria-expanded", String(!isExpanded));
+      moreButton.setAttribute("aria-label", isExpanded ? "Open more menu" : "Close more menu");
+      moreButton.classList.toggle("is-open", isExpanded);
+      moreButton.classList.toggle("is-closed", !isExpanded);
       moreMenu.classList.toggle("hidden");
     });
 
     document.addEventListener("click", (event) => {
       if (!moreMenu.contains(event.target) && !moreButton.contains(event.target)) {
         moreButton.setAttribute("aria-expanded", "false");
+        moreButton.setAttribute("aria-label", "Open more menu");
+        moreButton.classList.add("is-open");
+        moreButton.classList.remove("is-closed");
         moreMenu.classList.add("hidden");
       }
     });
@@ -78,6 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         moreButton.setAttribute("aria-expanded", "false");
+        moreButton.setAttribute("aria-label", "Open more menu");
+        moreButton.classList.add("is-open");
+        moreButton.classList.remove("is-closed");
         moreMenu.classList.add("hidden");
       });
     });
