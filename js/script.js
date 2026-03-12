@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const revealItems = document.querySelectorAll(".reveal");
   const statCounts = document.querySelectorAll(".stat-count");
   const footerYear = document.getElementById("footer-year");
+  const profileFrame = document.querySelector(".profile-frame");
+  const navProfileChip = document.querySelector(".nav-profile-chip");
   const certificateTriggers = document.querySelectorAll(".certificate-trigger");
   const certificateLightbox = document.getElementById("certificate-lightbox");
   const certificateLightboxImage = document.getElementById("certificate-lightbox-image");
@@ -112,6 +114,35 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
+
+  if (profileFrame && navProfileChip) {
+    const syncNavProfileChip = (entry) => {
+      navProfileChip.classList.toggle("is-visible", !entry.isIntersecting);
+    };
+
+    let profileObserver;
+
+    const initProfileObserver = () => {
+      profileObserver?.disconnect();
+
+      const navHeight = Math.round(document.querySelector("nav")?.offsetHeight || 72);
+
+      profileObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(syncNavProfileChip);
+        },
+        {
+          threshold: 0.2,
+          rootMargin: `-${navHeight}px 0px 0px 0px`,
+        }
+      );
+
+      profileObserver.observe(profileFrame);
+    };
+
+    initProfileObserver();
+    window.addEventListener("resize", initProfileObserver);
+  }
 
   if (statCounts.length) {
     const animateStatCount = (element) => {
