@@ -619,8 +619,10 @@ html.dark .cursor-ring {
   }
 
   .profile-frame img {
-    height: 14.25rem;
+    height: 18rem;
+    width: 100%;
     border-radius: 1.2rem;
+    object-position: center 12%;
   }
 
   h1 {
