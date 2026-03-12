@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Prakhar Purwar favicon</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10203b" />
+      <stop offset="100%" stop-color="#0a1630" />
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="18" fill="url(#bg)" />
+  <rect x="3" y="3" width="58" height="58" rx="18" fill="none" stroke="#d88a61" stroke-width="2.5" />
+  <text
+    x="50%"
+    y="56%"
+    text-anchor="middle"
+    font-family="Space Grotesk, Arial, sans-serif"
+    font-size="24"
+    font-weight="700"
+    letter-spacing="-0.4"
+    fill="#ffffff"
+  >
+    PP
+  </text>
+</svg>
