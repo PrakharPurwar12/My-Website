@@ -87,6 +87,32 @@ html.dark body {
   color: #c26a3d;
 }
 
+.typing-text {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1em;
+}
+
+.typing-text::after {
+  content: "";
+  width: 2px;
+  height: 0.95em;
+  margin-left: 0.22rem;
+  background: currentColor;
+  animation: blink-caret 0.9s steps(1) infinite;
+}
+
+@keyframes blink-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .text-pine {
   color: #1f3a34;
 }

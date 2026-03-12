@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("main section[id]");
   const revealItems = document.querySelectorAll(".reveal");
   const statCounts = document.querySelectorAll(".stat-count");
+  const heroTypingText = document.getElementById("hero-typing-text");
   const footerYear = document.getElementById("footer-year");
   const profileFrame = document.querySelector(".profile-frame");
   const navProfileChip = document.querySelector(".nav-profile-chip");
@@ -114,6 +115,40 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
+
+  if (heroTypingText?.dataset.typingText) {
+    const typingSource = heroTypingText.dataset.typingText;
+    let typingIndex = 0;
+    let isDeleting = false;
+
+    const runTypingLoop = () => {
+      const nextText = typingSource.slice(0, typingIndex);
+      heroTypingText.textContent = nextText;
+
+      if (!isDeleting && typingIndex < typingSource.length) {
+        typingIndex += 1;
+        window.setTimeout(runTypingLoop, 85);
+        return;
+      }
+
+      if (!isDeleting && typingIndex === typingSource.length) {
+        isDeleting = true;
+        window.setTimeout(runTypingLoop, 1200);
+        return;
+      }
+
+      if (isDeleting && typingIndex > 0) {
+        typingIndex -= 1;
+        window.setTimeout(runTypingLoop, 42);
+        return;
+      }
+
+      isDeleting = false;
+      window.setTimeout(runTypingLoop, 260);
+    };
+
+    runTypingLoop();
+  }
 
   if (profileFrame && navProfileChip) {
     const syncNavProfileChip = (entry) => {
