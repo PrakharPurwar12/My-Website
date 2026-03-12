@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Car Price Prediction ML Model app preview</title>
+  <desc id="desc">A light machine learning app preview with sidebar, title, form controls, and sliders.</desc>
+  <rect width="1600" height="900" rx="28" fill="#f3f4f6" />
+
+  <rect x="0" y="0" width="312" height="900" fill="#e5e7eb" />
+  <g font-family="Arial, sans-serif" fill="#1f2937">
+    <text x="22" y="104" font-size="24" font-weight="700">Car Price Predictor</text>
+    <text x="22" y="154" font-size="18">This app predicts the price of a used</text>
+    <text x="22" y="186" font-size="18">car based on its features. Use the</text>
+    <text x="22" y="218" font-size="18">inputs below to specify the car's</text>
+    <text x="22" y="250" font-size="18">details and get an estimated price.</text>
+
+    <text x="22" y="476" font-size="14" fill="#6b7280">Drive to Prediction 🚗</text>
+    <rect x="22" y="506" width="274" height="42" rx="10" fill="none" stroke="#9ca3af" />
+    <text x="42" y="533" font-size="14">›</text>
+    <text x="74" y="533" font-size="14">🔎  Data Explorer</text>
+    <rect x="22" y="570" width="16" height="16" rx="3" fill="none" stroke="#9ca3af" />
+    <text x="48" y="584" font-size="14">Show Sample Data</text>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#374151">
+    <text x="266" y="44" font-size="24">«</text>
+    <text x="1412" y="40" font-size="13">Share</text>
+    <circle cx="1478" cy="36" r="8" fill="none" stroke="#111827" stroke-width="1.5" />
+    <path d="M1510 28l8 8m-8 0 8-8" stroke="#111827" stroke-width="1.5" stroke-linecap="round" />
+    <circle cx="1540" cy="36" r="8" fill="none" stroke="#111827" stroke-width="1.5" />
+    <circle cx="1574" cy="30" r="2" fill="#111827" />
+    <circle cx="1574" cy="36" r="2" fill="#111827" />
+    <circle cx="1574" cy="42" r="2" fill="#111827" />
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <text x="408" y="106" font-size="30">🚘</text>
+    <text x="466" y="106" font-size="34" font-weight="700" fill="#111827">Car Price Prediction ML Model</text>
+    <text x="420" y="164" font-size="18" fill="#1f2937">Enter the car details below to predict its market price.</text>
+  </g>
+
+  <g fill="#ffffff">
+    <rect x="420" y="194" width="524" height="32" rx="10" />
+    <rect x="960" y="194" width="548" height="32" rx="10" />
+    <rect x="420" y="474" width="524" height="32" rx="10" />
+    <rect x="960" y="392" width="548" height="32" rx="10" />
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#1f2937">
+    <text x="420" y="262" font-size="16">Select Car Brand</text>
+    <text x="960" y="262" font-size="16">Transmission Type</text>
+    <text x="420" y="360" font-size="16">Car Manufactured Year</text>
+    <text x="960" y="360" font-size="16">Owner Type</text>
+    <text x="420" y="470" font-size="16">No of kms Driven</text>
+    <text x="960" y="540" font-size="16">Car Mileage (km/l)</text>
+    <text x="420" y="642" font-size="16">Fuel Type</text>
+    <text x="960" y="642" font-size="16">Engine CC</text>
+    <text x="420" y="746" font-size="16">Seller Type</text>
+    <text x="960" y="746" font-size="16">No of Seats</text>
+  </g>
+
+  <g fill="#e5e7eb">
+    <rect x="420" y="276" width="524" height="44" rx="10" />
+    <rect x="960" y="276" width="548" height="44" rx="10" />
+    <rect x="960" y="374" width="548" height="44" rx="10" />
+    <rect x="420" y="656" width="524" height="44" rx="10" />
+    <rect x="420" y="760" width="524" height="44" rx="10" />
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="15" fill="#1f2937">
+    <text x="436" y="304">Maruti</text>
+    <text x="976" y="304">Manual</text>
+    <text x="976" y="402">First Owner</text>
+    <text x="436" y="684">Petrol</text>
+    <text x="436" y="788">Individual</text>
+  </g>
+
+  <g stroke="#1f2937" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M914 296l6 6 6-6" />
+    <path d="M1478 296l6 6 6-6" />
+    <path d="M1478 394l6 6 6-6" />
+    <path d="M914 676l6 6 6-6" />
+    <path d="M914 780l6 6 6-6" />
+  </g>
+
+  <g fill="#ff4d4f" font-family="Arial, sans-serif" font-size="14">
+    <text x="774" y="388">2015</text>
+    <text x="430" y="492">50000</text>
+    <text x="1084" y="562">20.00</text>
+    <text x="1084" y="664">1500.00</text>
+    <text x="1098" y="770">5</text>
+  </g>
+
+  <g stroke="#d1d5db" stroke-width="4" stroke-linecap="round">
+    <line x1="420" y1="400" x2="944" y2="400" />
+    <line x1="420" y1="504" x2="944" y2="504" />
+    <line x1="960" y1="576" x2="1508" y2="576" />
+    <line x1="960" y1="678" x2="1508" y2="678" />
+    <line x1="960" y1="782" x2="1508" y2="782" />
+  </g>
+  <g stroke="#ff4d4f" stroke-width="4" stroke-linecap="round">
+    <line x1="420" y1="400" x2="760" y2="400" />
+    <line x1="420" y1="504" x2="438" y2="504" />
+    <line x1="960" y1="576" x2="1102" y2="576" />
+    <line x1="960" y1="678" x2="1110" y2="678" />
+    <line x1="960" y1="782" x2="1102" y2="782" />
+  </g>
+  <g fill="#ff4d4f">
+    <circle cx="760" cy="400" r="7" />
+    <circle cx="438" cy="504" r="7" />
+    <circle cx="1102" cy="576" r="7" />
+    <circle cx="1110" cy="678" r="7" />
+    <circle cx="1102" cy="782" r="7" />
+  </g>
+
+  <g fill="none" stroke="#6b7280" stroke-width="1.8">
+    <circle cx="934" cy="360" r="8" />
+    <circle cx="1498" cy="360" r="8" />
+    <circle cx="934" cy="470" r="8" />
+    <circle cx="1498" cy="540" r="8" />
+    <circle cx="934" cy="642" r="8" />
+    <circle cx="1498" cy="642" r="8" />
+    <circle cx="934" cy="746" r="8" />
+    <circle cx="1498" cy="746" r="8" />
+  </g>
+  <g fill="#6b7280" font-family="Arial, sans-serif" font-size="11" font-weight="700" text-anchor="middle">
+    <text x="934" y="364">?</text>
+    <text x="1498" y="364">?</text>
+    <text x="934" y="474">?</text>
+    <text x="1498" y="544">?</text>
+    <text x="934" y="646">?</text>
+    <text x="1498" y="646">?</text>
+    <text x="934" y="750">?</text>
+    <text x="1498" y="750">?</text>
+  </g>
+
+  <rect x="1450" y="856" width="150" height="44" rx="14" fill="#020617" />
+  <path d="M1476 878l8-8m-8 8l8 8" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="1510" y="883" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Manage app</text>
+</svg>

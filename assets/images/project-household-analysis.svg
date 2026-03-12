@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Socio-Economic Analysis of Indian Households app preview</title>
+  <desc id="desc">A light dashboard preview with title, subtitle, dataset preview table, and dataset information table.</desc>
+  <rect width="1600" height="900" rx="28" fill="#f4f4f5" />
+
+  <g fill="#111827" font-family="Arial, sans-serif">
+    <text x="84" y="122" font-size="28" font-weight="500">Socio-Economic Analysis of Indian Households</text>
+    <text x="84" y="172" font-size="16" fill="#374151">
+      Interactive dashboard built using Python, Pandas, and Streamlit to explore socio-economic patterns in household survey data.
+    </text>
+  </g>
+
+  <g transform="translate(1400 54)" fill="#111827" font-family="Arial, sans-serif" font-size="13">
+    <text x="0" y="0">Share</text>
+    <circle cx="90" cy="-5" r="8" fill="none" stroke="#111827" stroke-width="1.5" />
+    <path d="M127 -12l10 10M127 -2l10-10" stroke="#111827" stroke-width="1.5" stroke-linecap="round" />
+    <circle cx="166" cy="-5" r="8" fill="none" stroke="#111827" stroke-width="1.5" />
+    <circle cx="202" cy="-10" r="2" />
+    <circle cx="202" cy="-5" r="2" />
+    <circle cx="202" cy="0" r="2" />
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#1f2937">
+    <text x="84" y="246" font-size="28" font-weight="700">Dataset Preview</text>
+    <rect x="84" y="272" width="1420" height="256" rx="12" fill="#ffffff" stroke="#d1d5db" />
+    <rect x="84" y="272" width="1420" height="38" rx="12" fill="#f8fafc" stroke="#d1d5db" />
+  </g>
+
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="138" y1="272" x2="138" y2="528" />
+    <line x1="230" y1="272" x2="230" y2="528" />
+    <line x1="334" y1="272" x2="334" y2="528" />
+    <line x1="410" y1="272" x2="410" y2="528" />
+    <line x1="500" y1="272" x2="500" y2="528" />
+    <line x1="558" y1="272" x2="558" y2="528" />
+    <line x1="646" y1="272" x2="646" y2="528" />
+    <line x1="710" y1="272" x2="710" y2="528" />
+    <line x1="780" y1="272" x2="780" y2="528" />
+    <line x1="878" y1="272" x2="878" y2="528" />
+    <line x1="966" y1="272" x2="966" y2="528" />
+    <line x1="1088" y1="272" x2="1088" y2="528" />
+    <line x1="1212" y1="272" x2="1212" y2="528" />
+    <line x1="1328" y1="272" x2="1328" y2="528" />
+    <line x1="1440" y1="272" x2="1440" y2="528" />
+    <line x1="84" y1="348" x2="1504" y2="348" />
+    <line x1="84" y1="424" x2="1504" y2="424" />
+    <line x1="84" y1="500" x2="1504" y2="500" />
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="12" fill="#6b7280">
+    <text x="120" y="298"> </text>
+    <text x="146" y="298">Schedule ID</text>
+    <text x="238" y="298">FSU Serial No.</text>
+    <text x="342" y="298">Schedule</text>
+    <text x="418" y="298">survey year</text>
+    <text x="508" y="298">Sector</text>
+    <text x="566" y="298">NSS-Region</text>
+    <text x="654" y="298">District</text>
+    <text x="718" y="298">Stratum</text>
+    <text x="788" y="298">Sub-Stratum</text>
+    <text x="886" y="298">Sub-Round</text>
+    <text x="974" y="298">FOD Sub-Region</text>
+    <text x="1096" y="298">Sample hhld. No.</text>
+    <text x="1220" y="298">Informant Sl.No.</text>
+    <text x="1336" y="298">Response Code</text>
+    <text x="1448" y="298">Survey Code</text>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="12" fill="#374151">
+    <text x="120" y="368">0</text>
+    <text x="146" y="368">TUS</text>
+    <text x="286" y="368">32223</text>
+    <text x="378" y="368">106</text>
+    <text x="456" y="368">2024</text>
+    <text x="540" y="368">1</text>
+    <text x="624" y="368">11</text>
+    <text x="690" y="368">21</text>
+    <text x="754" y="368">13</text>
+    <text x="842" y="368">1</text>
+    <text x="946" y="368">2</text>
+    <text x="1046" y="368">110</text>
+    <text x="1186" y="368">1</text>
+    <text x="1310" y="368">2</text>
+    <text x="1418" y="368">1</text>
+    <text x="1480" y="368">1</text>
+
+    <text x="120" y="444">1</text>
+    <text x="146" y="444">TUS</text>
+    <text x="286" y="444">32223</text>
+    <text x="378" y="444">106</text>
+    <text x="456" y="444">2024</text>
+    <text x="540" y="444">1</text>
+    <text x="624" y="444">11</text>
+    <text x="690" y="444">21</text>
+    <text x="754" y="444">13</text>
+    <text x="842" y="444">1</text>
+    <text x="946" y="444">2</text>
+    <text x="1046" y="444">110</text>
+    <text x="1186" y="444">2</text>
+    <text x="1310" y="444">1</text>
+    <text x="1418" y="444">1</text>
+    <text x="1480" y="444">1</text>
+
+    <text x="120" y="520">2</text>
+    <text x="146" y="520">TUS</text>
+    <text x="286" y="520">32223</text>
+    <text x="378" y="520">106</text>
+    <text x="456" y="520">2024</text>
+    <text x="540" y="520">1</text>
+    <text x="624" y="520">11</text>
+    <text x="690" y="520">21</text>
+    <text x="754" y="520">13</text>
+    <text x="842" y="520">1</text>
+    <text x="946" y="520">2</text>
+    <text x="1046" y="520">110</text>
+    <text x="1186" y="520">3</text>
+    <text x="1310" y="520">2</text>
+    <text x="1418" y="520">1</text>
+    <text x="1480" y="520">1</text>
+  </g>
+
+  <rect x="1406" y="236" width="78" height="30" rx="10" fill="#ffffff" stroke="#e5e7eb" />
+  <path d="M1428 252v6m-4-4l4 4 4-4" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="1454" cy="251" r="5" fill="none" stroke="#6b7280" stroke-width="1.5" />
+  <path d="M1475 247h8v8" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" />
+
+  <rect x="98" y="516" width="260" height="6" rx="3" fill="#9ca3af" />
+
+  <g font-family="Arial, sans-serif" fill="#1f2937">
+    <text x="84" y="604" font-size="28" font-weight="700">Dataset Information</text>
+    <rect x="84" y="630" width="1420" height="196" rx="12" fill="#ffffff" stroke="#d1d5db" />
+    <rect x="84" y="630" width="1420" height="38" rx="12" fill="#f8fafc" stroke="#d1d5db" />
+  </g>
+
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="136" y1="630" x2="136" y2="826" />
+    <line x1="240" y1="630" x2="240" y2="826" />
+    <line x1="316" y1="630" x2="316" y2="826" />
+    <line x1="404" y1="630" x2="404" y2="826" />
+    <line x1="474" y1="630" x2="474" y2="826" />
+    <line x1="562" y1="630" x2="562" y2="826" />
+    <line x1="636" y1="630" x2="636" y2="826" />
+    <line x1="716" y1="630" x2="716" y2="826" />
+    <line x1="800" y1="630" x2="800" y2="826" />
+    <line x1="918" y1="630" x2="918" y2="826" />
+    <line x1="1040" y1="630" x2="1040" y2="826" />
+    <line x1="1160" y1="630" x2="1160" y2="826" />
+    <line x1="1276" y1="630" x2="1276" y2="826" />
+    <line x1="1370" y1="630" x2="1370" y2="826" />
+    <line x1="84" y1="708" x2="1504" y2="708" />
+    <line x1="84" y1="750" x2="1504" y2="750" />
+    <line x1="84" y1="792" x2="1504" y2="792" />
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="12" fill="#6b7280">
+    <text x="146" y="656">FSU Serial No.</text>
+    <text x="248" y="656">Schedule</text>
+    <text x="324" y="656">survey year</text>
+    <text x="412" y="656">Sector</text>
+    <text x="482" y="656">NSS-Region</text>
+    <text x="570" y="656">District</text>
+    <text x="644" y="656">Stratum</text>
+    <text x="724" y="656">Sub-Stratum</text>
+    <text x="808" y="656">Sub-Round</text>
+    <text x="926" y="656">FOD Sub-Region</text>
+    <text x="1048" y="656">Sample hhld. No.</text>
+    <text x="1168" y="656">Informant Sl.No.</text>
+    <text x="1284" y="656">Response Code</text>
+    <text x="1378" y="656">Survey Code</text>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="12" fill="#374151">
+    <text x="94" y="694">count</text>
+    <text x="186" y="694">139489</text>
+    <text x="260" y="694">139489</text>
+    <text x="350" y="694">139489</text>
+    <text x="430" y="694">139489</text>
+    <text x="514" y="694">139489</text>
+    <text x="596" y="694">139489</text>
+    <text x="678" y="694">139489</text>
+    <text x="768" y="694">139489</text>
+    <text x="850" y="694">139489</text>
+    <text x="978" y="694">139489</text>
+    <text x="1110" y="694">139489</text>
+    <text x="1230" y="694">139487</text>
+    <text x="1338" y="694">139489</text>
+
+    <text x="94" y="736">mean</text>
+    <text x="182" y="736">46374.2309</text>
+    <text x="274" y="736">106</text>
+    <text x="364" y="736">2024</text>
+    <text x="448" y="736">1.4032</text>
+    <text x="526" y="736">192.466</text>
+    <text x="604" y="736">16.7306</text>
+    <text x="686" y="736">16.6711</text>
+    <text x="776" y="736">9.7649</text>
+    <text x="856" y="736">2.5011</text>
+    <text x="994" y="736">1905.014</text>
+    <text x="1128" y="736">7.4982</text>
+    <text x="1226" y="736">13.9647</text>
+    <text x="1332" y="736">1.1677</text>
+    <text x="1434" y="736">1.0615</text>
+  </g>
+
+  <rect x="1444" y="776" width="156" height="60" rx="14" fill="#020617" />
+  <path d="M1470 806l8-8m-8 8l8 8" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="1502" y="811" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Manage app</text>
+</svg>

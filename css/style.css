@@ -269,6 +269,147 @@ button.rounded-full:active {
   opacity: 0.7;
 }
 
+.project-card {
+  overflow: hidden;
+}
+
+.project-preview {
+  display: block;
+  width: 100%;
+  height: 14rem;
+  margin-bottom: 1.25rem;
+  border-radius: 1.35rem;
+  object-fit: cover;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  background: linear-gradient(135deg, rgba(31, 58, 52, 0.1), rgba(194, 106, 61, 0.08));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.project-card:hover .project-preview {
+  transform: scale(1.015);
+  box-shadow: 0 18px 34px rgba(17, 24, 39, 0.12);
+}
+
+.certificate-trigger {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.certificate-trigger img {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.certificate-trigger:hover img {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(17, 24, 39, 0.12);
+}
+
+.certificate-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.certificate-lightbox.hidden {
+  display: none;
+}
+
+.certificate-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.certificate-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.certificate-lightbox__content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 64rem);
+  max-height: calc(100vh - 3rem);
+  padding: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.36);
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  transition:
+    opacity 240ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.certificate-lightbox.is-open .certificate-lightbox__backdrop {
+  opacity: 1;
+}
+
+.certificate-lightbox.is-open .certificate-lightbox__content {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.certificate-lightbox__close {
+  position: absolute;
+  top: -0.9rem;
+  right: -0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+}
+
+.certificate-lightbox__image {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 5rem);
+  border-radius: 1rem;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+html.dark .project-preview {
+  border-color: rgba(148, 163, 184, 0.18);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(15, 23, 42, 0.32));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+html.dark .certificate-lightbox__content {
+  border-color: rgba(148, 163, 184, 0.2);
+  background: rgba(15, 23, 42, 0.35);
+}
+
+html.dark .certificate-lightbox__close {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
 .education-panel {
   position: relative;
   overflow: hidden;
@@ -645,6 +786,12 @@ html.dark .cursor-ring {
     padding: 1.1rem;
   }
 
+  .project-preview {
+    height: 11rem;
+    margin-bottom: 1rem;
+    border-radius: 1.1rem;
+  }
+
   #projects h3,
   #certificates h3,
   #achievements h3,
@@ -667,6 +814,29 @@ html.dark .cursor-ring {
 
   #certificates img {
     height: 11rem;
+  }
+
+  .certificate-lightbox {
+    padding: 1rem;
+  }
+
+  .certificate-lightbox__content {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 1.1rem;
+  }
+
+  .certificate-lightbox__close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.7rem;
+  }
+
+  .certificate-lightbox__image {
+    max-height: calc(100vh - 4rem);
+    border-radius: 0.85rem;
   }
 
   .education-scroll {

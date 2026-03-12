@@ -18,7 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("main section[id]");
   const revealItems = document.querySelectorAll(".reveal");
+  const statCounts = document.querySelectorAll(".stat-count");
   const footerYear = document.getElementById("footer-year");
+  const certificateTriggers = document.querySelectorAll(".certificate-trigger");
+  const certificateLightbox = document.getElementById("certificate-lightbox");
+  const certificateLightboxImage = document.getElementById("certificate-lightbox-image");
+  const certificateLightboxClose = document.getElementById("certificate-lightbox-close");
+  let activeCertificateTrigger = null;
+  let certificateLightboxTimeoutId = null;
 
   const syncThemeToggle = () => {
     if (!themeToggle || !themeToggleLabel) return;
@@ -90,6 +97,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealItems.forEach((item) => revealObserver.observe(item));
 
+  if (statCounts.length) {
+    const animateStatCount = (element) => {
+      if (element.dataset.counted === "true") return;
+
+      const target = Number(element.dataset.statTarget || 0);
+      const suffix = element.dataset.statSuffix || "";
+      const duration = target >= 1000 ? 1400 : 1100;
+      const startTime = performance.now();
+
+      element.dataset.counted = "true";
+
+      const updateValue = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.round(target * easedProgress);
+
+        element.textContent = `${currentValue}${suffix}`;
+
+        if (progress < 1) {
+          window.requestAnimationFrame(updateValue);
+        } else {
+          element.textContent = `${target}${suffix}`;
+        }
+      };
+
+      window.requestAnimationFrame(updateValue);
+    };
+
+    const statObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          animateStatCount(entry.target);
+          statObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    statCounts.forEach((count) => statObserver.observe(count));
+  }
+
   const updateActiveNav = () => {
     const scrollMarker = window.scrollY + 140;
     let activeId = sections[0]?.id;
@@ -112,5 +162,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
+  }
+
+  if (certificateTriggers.length && certificateLightbox && certificateLightboxImage && certificateLightboxClose) {
+    const openCertificateLightbox = (trigger) => {
+      const { certificateSrc, certificateAlt } = trigger.dataset;
+      if (!certificateSrc) return;
+
+      window.clearTimeout(certificateLightboxTimeoutId);
+      activeCertificateTrigger = trigger;
+      certificateLightboxImage.src = certificateSrc;
+      certificateLightboxImage.alt = certificateAlt || "Certificate preview";
+      certificateLightbox.classList.remove("hidden");
+      certificateLightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      window.requestAnimationFrame(() => {
+        certificateLightbox.classList.add("is-open");
+        certificateLightboxClose.focus();
+      });
+    };
+
+    const closeCertificateLightbox = () => {
+      certificateLightbox.classList.remove("is-open");
+      certificateLightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+
+      certificateLightboxTimeoutId = window.setTimeout(() => {
+        certificateLightbox.classList.add("hidden");
+        certificateLightboxImage.src = "";
+        certificateLightboxImage.alt = "";
+        activeCertificateTrigger?.focus();
+        activeCertificateTrigger = null;
+      }, 280);
+    };
+
+    certificateTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => openCertificateLightbox(trigger));
+    });
+
+    certificateLightbox.addEventListener("click", (event) => {
+      if (event.target === certificateLightbox || event.target.dataset.lightboxClose === "true") {
+        closeCertificateLightbox();
+      }
+    });
+
+    certificateLightboxClose.addEventListener("click", closeCertificateLightbox);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !certificateLightbox.classList.contains("hidden")) {
+        closeCertificateLightbox();
+      }
+    });
   }
 });
