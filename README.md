@@ -1,35 +1,68 @@
 # Prakhar Purwar Portfolio
 
-This repository contains my personal portfolio website. It is designed to present my profile for data analyst, data science internship, and entry-level software opportunities through a clean, responsive, and project-focused interface.
+Personal portfolio website for showcasing my work in data analytics, machine learning, and full stack development.
+
+[Live Website](https://prakharpurwar12.github.io/My-Website/) | [Resume](assets/docs/Resume.pdf) | [LinkedIn](https://www.linkedin.com/in/prakharpurwar/) | [GitHub](https://github.com/PrakharPurwar12)
 
 ## Overview
 
-The portfolio highlights:
+This portfolio is designed as a recruiter-friendly and project-focused personal website. It presents my background, selected work, internship experience, technical skills, certifications, and academic journey in a clean single-page layout.
 
-- professional summary and target role
-- internship experience
-- selected projects with tech stack and impact
-- skills across analytics, machine learning, and development
-- extracurricular activities and coding practice
-- training, certificates, education, and contact information
+The site is built to communicate three things quickly:
 
-The goal is to keep the portfolio visually polished while making it easy for recruiters and collaborators to quickly evaluate my background and work.
+- what I work on
+- what I have built
+- how I am preparing for analytics and software roles
 
-## Tech Stack
+## Highlights
 
-- HTML
+- Clean responsive portfolio with light and dark mode support
+- Project showcase with live demo and GitHub links
+- Dedicated sections for internship, training, achievements, certificates, and education
+- Resume access directly from the portfolio
+- Certificate lightbox preview for credential images
+- Custom styling and interaction layers using vanilla JavaScript and CSS
+
+## Featured Content
+
+### Internship
+
+- Deloitte Data Analytics Job Simulation
+
+### Selected Projects
+
+- Sales Visualization Dashboard
+- Socio-Economic Analysis of Indian Households
+- Bargain Hunter Bot
+- Car Price Prediction Model
+
+### Skills Snapshot
+
+- Languages: Python, C, C++, Java, JavaScript, SQL, HTML, CSS
+- Data and ML: Pandas, NumPy, Matplotlib, Seaborn, Plotly, TensorFlow, PyTorch, scikit-learn
+- Frameworks: Flask, FastAPI, Django, Django REST Framework, Streamlit
+- Tools: Git, GitHub, Power BI, Jupyter Notebook, Postman, MySQL, PostgreSQL
+
+## Built With
+
+- HTML5
 - Tailwind CSS via CDN
 - Custom CSS
 - Vanilla JavaScript
 
-## Features
+## Sections Included
 
-- responsive layout for desktop and mobile
-- dark mode toggle
-- simplified desktop navigation with dropdown
-- scroll reveal animation
-- structured project cards with GitHub and demo actions
-- organized sections for internship, achievements, extracurriculars, training, certificates, and education
+- Hero
+- About
+- Skills
+- Internship
+- Projects
+- Training
+- Achievements
+- Extracurricular
+- Certificates
+- Education
+- Contact
 
 ## Project Structure
 
@@ -39,57 +72,50 @@ Portfolio/
 |-- css/
 |   `-- style.css
 |-- js/
-|   `-- script.js
+|   |-- script.js
+|   `-- cursor-trail.js
 |-- assets/
 |   |-- docs/
 |   |   `-- Resume.pdf
 |   `-- images/
-|       |-- dp.png
-|       |-- image.png
-|       |-- FreeCodeCamp.png
 |       |-- deloitte-certificate.png
+|       |-- dp.png
+|       |-- favicon.svg
+|       |-- FreeCodeCamp.png
 |       |-- google-certificate.png
+|       |-- hooded-coder.svg
+|       |-- image.png
+|       |-- lpu-ml-certificate.png
+|       |-- project-bargain-hunter.svg
+|       |-- project-car-price.svg
+|       |-- project-household-analysis.svg
+|       |-- project-sales-dashboard.svg
+|       |-- square_image.png
 |       `-- toc.png
-|-- screenshots/
 |-- .gitignore
 `-- README.md
 ```
 
-## Sections Included
+## Run Locally
 
-- Hero
-- About
-- Internship
-- Projects
-- Skills
-- Achievements
-- Extracurricular Activities
-- Training
-- Certificates
-- Education
-- Contact
+This is a static website, so no build process is required.
 
-## Running Locally
+1. Clone the repository.
+2. Open `index.html` in a browser.
+3. For a better workflow, run it with a live server extension from your editor.
 
-This is a static portfolio website, so no build step is required.
+## Why This Portfolio
 
-Open `index.html` directly in a browser, or use a local live server extension in your editor for a better development workflow.
+This portfolio is structured to be simple for recruiters to scan while still showing technical depth through:
 
-## Deployment
-
-The portfolio is intended for GitHub Pages deployment.
-
-Live website:
-https://prakharpurwar12.github.io/My-Website/
-
-## Notes
-
-- resume and images are stored inside the `assets/` directory
-- local screenshots are ignored through `.gitignore`
-- demo links for some projects can be updated later when live deployments are available
+- impact-focused project summaries
+- direct access to demos and source code
+- clearly separated learning, training, and certification sections
+- a polished UI with responsive behavior and theme support
 
 ## Contact
 
 - Email: `purwarprakhar00@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/prakharpurwar/`
 - GitHub: `https://github.com/PrakharPurwar12`
+
