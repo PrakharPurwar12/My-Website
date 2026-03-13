@@ -4,6 +4,10 @@ Personal portfolio website for showcasing my work in data analytics, machine lea
 
 [Live Website](https://prakharpurwar12.github.io/My-Website/) | [Resume](assets/docs/Resume.pdf) | [LinkedIn](https://www.linkedin.com/in/prakharpurwar/) | [GitHub](https://github.com/PrakharPurwar12)
 
+## Preview
+
+![Portfolio Landing Page Preview](assets/images/portfolio-landing-preview.png)
+
 ## Overview
 
 This portfolio is designed as a recruiter-friendly and project-focused personal website. It presents my background, selected work, internship experience, technical skills, certifications, and academic journey in a clean single-page layout.
@@ -86,6 +90,7 @@ Portfolio/
 |       |-- hooded-coder.svg
 |       |-- image.png
 |       |-- lpu-ml-certificate.png
+|       |-- portfolio-landing-preview.png
 |       |-- project-bargain-hunter.svg
 |       |-- project-car-price.svg
 |       |-- project-household-analysis.svg
@@ -118,4 +123,3 @@ This portfolio is structured to be simple for recruiters to scan while still sho
 - Email: `purwarprakhar00@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/prakharpurwar/`
 - GitHub: `https://github.com/PrakharPurwar12`
-
