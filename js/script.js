@@ -9,6 +9,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.documentElement;
+  root.classList.add("reveal-enabled");
   const menuButton = document.getElementById("menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
   const themeToggle = document.getElementById("theme-toggle");
@@ -173,19 +174,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const syncInitialRevealState = () => {
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    revealItems.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      const isInInitialViewport = rect.top < viewportHeight * 0.92 && rect.bottom > viewportHeight * 0.08;
+      item.classList.toggle("is-visible", isInInitialViewport);
+    });
+  };
+
+  syncInitialRevealState();
+
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        entry.target.classList.toggle("is-visible", entry.isIntersecting);
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const hasMeaningfulOverlap =
+          entry.intersectionRatio > 0.04 ||
+          (entry.boundingClientRect.top < viewportHeight * 0.9 && entry.boundingClientRect.bottom > viewportHeight * 0.12);
+
+        entry.target.classList.toggle("is-visible", hasMeaningfulOverlap);
       });
     },
     {
-      threshold: 0.18,
-      rootMargin: "0px 0px -8% 0px",
+      threshold: [0, 0.04, 0.12, 0.22],
+      rootMargin: "0px 0px -2% 0px",
     }
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
+  window.addEventListener("resize", syncInitialRevealState);
 
   if (heroTypingText?.dataset.typingText) {
     const typingSource = heroTypingText.dataset.typingText;
