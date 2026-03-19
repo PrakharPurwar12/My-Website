@@ -12,8 +12,7 @@
   let targetX = currentX;
   let targetY = currentY;
   let rafId = 0;
-  const interactiveSelector =
-    "a, button, [role='button'], input, textarea, select, .project-card, .certificate-trigger";
+  const interactiveSelector = "a, button, [role='button'], input, textarea, select";
 
   function startRenderLoop() {
     if (rafId) {

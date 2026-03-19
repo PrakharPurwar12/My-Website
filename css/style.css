@@ -1129,8 +1129,8 @@ main section[id] {
 }
 
 .cursor-ring.is-hovering {
-  width: 34px;
-  height: 34px;
+  width: 28px;
+  height: 28px;
   border-color: rgba(194, 106, 61, 0.72);
   background: rgba(194, 106, 61, 0.08);
 }
