@@ -27,8 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const certificateLightbox = document.getElementById("certificate-lightbox");
   const certificateLightboxImage = document.getElementById("certificate-lightbox-image");
   const certificateLightboxClose = document.getElementById("certificate-lightbox-close");
+  const caseStudyTriggers = document.querySelectorAll(".case-study-trigger");
+  const caseStudyModal = document.getElementById("case-study-modal");
+  const caseStudyTitle = document.getElementById("case-study-title");
+  const caseStudyProblem = document.getElementById("case-study-problem");
+  const caseStudyBuild = document.getElementById("case-study-build");
+  const caseStudyStack = document.getElementById("case-study-stack");
+  const caseStudyImpact = document.getElementById("case-study-impact");
+  const caseStudyClose = document.getElementById("case-study-close");
   let activeCertificateTrigger = null;
   let certificateLightboxTimeoutId = null;
+  let caseStudyModalTimeoutId = null;
+  let activeCaseStudyTrigger = null;
 
   const syncThemeToggle = () => {
     if (!themeToggle || !themeToggleLabel) return;
@@ -244,6 +254,89 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
+  }
+
+  if (
+    caseStudyTriggers.length &&
+    caseStudyModal &&
+    caseStudyTitle &&
+    caseStudyProblem &&
+    caseStudyBuild &&
+    caseStudyStack &&
+    caseStudyImpact &&
+    caseStudyClose
+  ) {
+    const closeCaseStudyModal = ({ restoreFocus = true } = {}) => {
+      caseStudyModal.classList.remove("is-open");
+      caseStudyModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+
+      window.clearTimeout(caseStudyModalTimeoutId);
+      caseStudyModalTimeoutId = window.setTimeout(() => {
+        caseStudyModal.classList.add("hidden");
+
+        if (activeCaseStudyTrigger) {
+          activeCaseStudyTrigger.setAttribute("aria-expanded", "false");
+          if (restoreFocus) {
+            activeCaseStudyTrigger.focus();
+          }
+        }
+
+        activeCaseStudyTrigger = null;
+      }, 280);
+    };
+
+    const openCaseStudyModal = (trigger) => {
+      const isSameTrigger = activeCaseStudyTrigger === trigger && caseStudyModal.classList.contains("is-open");
+
+      if (isSameTrigger) {
+        closeCaseStudyModal();
+        return;
+      }
+
+      window.clearTimeout(caseStudyModalTimeoutId);
+
+      if (activeCaseStudyTrigger) {
+        activeCaseStudyTrigger.setAttribute("aria-expanded", "false");
+      }
+
+      caseStudyTitle.textContent = trigger.dataset.caseTitle || "Project Case Study";
+      caseStudyProblem.textContent = trigger.dataset.caseProblem || "";
+      caseStudyBuild.textContent = trigger.dataset.caseBuild || "";
+      caseStudyStack.textContent = trigger.dataset.caseStack || "";
+      caseStudyImpact.textContent = trigger.dataset.caseImpact || "";
+
+      activeCaseStudyTrigger = trigger;
+      activeCaseStudyTrigger.setAttribute("aria-expanded", "true");
+      caseStudyModal.classList.remove("hidden");
+      caseStudyModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+
+      window.requestAnimationFrame(() => {
+        caseStudyModal.classList.add("is-open");
+        caseStudyClose.focus();
+      });
+    };
+
+    caseStudyTriggers.forEach((trigger) => {
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.setAttribute("aria-controls", "case-study-modal");
+      trigger.addEventListener("click", () => openCaseStudyModal(trigger));
+    });
+
+    caseStudyModal.addEventListener("click", (event) => {
+      if (event.target === caseStudyModal || event.target.dataset.caseClose === "true") {
+        closeCaseStudyModal();
+      }
+    });
+
+    caseStudyClose.addEventListener("click", () => closeCaseStudyModal());
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !caseStudyModal.classList.contains("hidden")) {
+        closeCaseStudyModal();
+      }
+    });
   }
 
   if (certificateTriggers.length && certificateLightbox && certificateLightboxImage && certificateLightboxClose) {

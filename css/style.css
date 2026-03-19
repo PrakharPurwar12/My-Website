@@ -757,6 +757,11 @@ button.rounded-full:active {
   overflow: hidden;
 }
 
+.case-study-trigger[aria-expanded="true"] {
+  border-color: #c26a3d;
+  color: #c26a3d;
+}
+
 .project-preview {
   display: block;
   width: 100%;
@@ -791,6 +796,7 @@ button.rounded-full:active {
   box-shadow: 0 18px 34px rgba(17, 24, 39, 0.12);
 }
 
+.case-study-modal,
 .certificate-lightbox {
   position: fixed;
   inset: 0;
@@ -799,22 +805,26 @@ button.rounded-full:active {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  overflow-x: hidden;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 220ms ease, visibility 220ms ease;
 }
 
+.case-study-modal.hidden,
 .certificate-lightbox.hidden {
   display: none;
 }
 
+.case-study-modal.is-open,
 .certificate-lightbox.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
+.case-study-modal__backdrop,
 .certificate-lightbox__backdrop {
   position: absolute;
   inset: 0;
@@ -824,6 +834,7 @@ button.rounded-full:active {
   transition: opacity 240ms ease;
 }
 
+.case-study-modal__content,
 .certificate-lightbox__content {
   position: relative;
   z-index: 1;
@@ -834,6 +845,7 @@ button.rounded-full:active {
   border-radius: 1.5rem;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 24px 70px rgba(2, 6, 23, 0.36);
+  overflow-x: hidden;
   opacity: 0;
   transform: translateY(16px) scale(0.96);
   transition:
@@ -841,19 +853,29 @@ button.rounded-full:active {
     transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.case-study-modal__content {
+  width: min(58rem, calc(100vw - 3rem));
+  max-height: calc(100vh - 3rem);
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.case-study-modal.is-open .case-study-modal__backdrop,
 .certificate-lightbox.is-open .certificate-lightbox__backdrop {
   opacity: 1;
 }
 
+.case-study-modal.is-open .case-study-modal__content,
 .certificate-lightbox.is-open .certificate-lightbox__content {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
+.case-study-modal__close,
 .certificate-lightbox__close {
   position: absolute;
-  top: -0.9rem;
-  right: -0.9rem;
+  top: 0.85rem;
+  right: 0.85rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -867,6 +889,11 @@ button.rounded-full:active {
   line-height: 1;
   cursor: pointer;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+}
+
+.case-study-modal__close:hover,
+.case-study-modal__close:focus-visible {
+  color: #c26a3d;
 }
 
 .certificate-lightbox__image {
@@ -884,11 +911,18 @@ html.dark .project-preview {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+html.dark .case-study-trigger[aria-expanded="true"] {
+  border-color: rgba(246, 200, 176, 0.55);
+  color: #f6c8b0;
+}
+
+html.dark .case-study-modal__content,
 html.dark .certificate-lightbox__content {
   border-color: rgba(148, 163, 184, 0.2);
   background: rgba(15, 23, 42, 0.35);
 }
 
+html.dark .case-study-modal__close,
 html.dark .certificate-lightbox__close {
   background: #0f172a;
   color: #f8fafc;
@@ -1330,13 +1364,33 @@ html.dark .cursor-ring {
     padding: 1rem;
   }
 
+   .case-study-modal {
+    padding: 1rem;
+  }
+
   .certificate-lightbox__content {
     width: 100%;
     padding: 0.7rem;
     border-radius: 1.1rem;
   }
 
+  .case-study-modal__content {
+    width: 100%;
+    max-height: calc(100vh - 2rem);
+    padding: 1rem;
+    padding-top: 3.75rem;
+    border-radius: 1.1rem;
+  }
+
   .certificate-lightbox__close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.7rem;
+  }
+
+  .case-study-modal__close {
     top: 0.5rem;
     right: 0.5rem;
     width: 2.5rem;
