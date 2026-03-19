@@ -12,6 +12,8 @@
   let targetX = currentX;
   let targetY = currentY;
   let rafId = 0;
+  const interactiveSelector =
+    "a, button, [role='button'], input, textarea, select, .project-card, .certificate-trigger";
 
   function startRenderLoop() {
     if (rafId) {
@@ -22,8 +24,8 @@
   }
 
   function render() {
-    currentX += (targetX - currentX) * 0.42;
-    currentY += (targetY - currentY) * 0.42;
+    currentX += (targetX - currentX) * 0.56;
+    currentY += (targetY - currentY) * 0.56;
     cursorRing.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%)`;
 
     if (Math.abs(targetX - currentX) < 0.1 && Math.abs(targetY - currentY) < 0.1) {
@@ -53,11 +55,33 @@
     cursorRing.classList.remove("is-active");
   });
 
+  document.addEventListener(
+    "pointerover",
+    (event) => {
+      if (event.target.closest(interactiveSelector)) {
+        cursorRing.classList.add("is-hovering");
+      }
+    },
+    { passive: true }
+  );
+
+  document.addEventListener(
+    "pointerout",
+    (event) => {
+      if (event.target.closest(interactiveSelector)) {
+        cursorRing.classList.remove("is-hovering");
+      }
+    },
+    { passive: true }
+  );
+
   document.addEventListener("mouseleave", () => {
     cursorRing.classList.remove("is-visible");
+    cursorRing.classList.remove("is-hovering");
   });
 
   window.addEventListener("blur", () => {
     cursorRing.classList.remove("is-visible");
+    cursorRing.classList.remove("is-hovering");
   });
 })();

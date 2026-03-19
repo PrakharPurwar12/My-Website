@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const statCounts = document.querySelectorAll(".stat-count");
   const heroTypingText = document.getElementById("hero-typing-text");
   const footerYear = document.getElementById("footer-year");
+  const scrollProgressBar = document.getElementById("scroll-progress-bar");
+  const navElement = document.querySelector("nav");
   const profileFrame = document.querySelector(".profile-frame");
   const navProfileChip = document.querySelector(".nav-profile-chip");
   const certificateTriggers = document.querySelectorAll(".certificate-trigger");
@@ -65,6 +67,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   syncThemeToggle();
+
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  anchorLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const targetId = link.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+
+      const targetElement = document.querySelector(targetId);
+      if (!targetElement) return;
+
+      event.preventDefault();
+
+      const navHeight = Math.round(navElement?.offsetHeight || 72);
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight - 18;
+
+      window.scrollTo({
+        top: Math.max(targetPosition, 0),
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
+
+      if (window.history.pushState) {
+        window.history.pushState(null, "", targetId);
+      }
+    });
+  });
 
   if (menuButton && mobileMenu) {
     menuButton.addEventListener("click", () => {
@@ -246,11 +275,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const isActive = link.getAttribute("href") === `#${activeId}`;
       link.classList.toggle("text-accent", isActive);
     });
+
+    if (navElement) {
+      navElement.classList.toggle("is-scrolled", window.scrollY > 18);
+    }
+  };
+
+  const updateScrollProgress = () => {
+    if (!scrollProgressBar) return;
+
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight <= 0 ? 0 : (window.scrollY / scrollableHeight) * 100;
+    scrollProgressBar.style.width = `${Math.min(progress, 100)}%`;
   };
 
   window.addEventListener("scroll", updateActiveNav, { passive: true });
+  window.addEventListener("scroll", updateScrollProgress, { passive: true });
   window.addEventListener("load", updateActiveNav);
+  window.addEventListener("load", updateScrollProgress);
   updateActiveNav();
+  updateScrollProgress();
 
   if (footerYear) {
     footerYear.textContent = new Date().getFullYear();
