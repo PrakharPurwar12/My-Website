@@ -70,6 +70,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+
+  if (prefersCoarsePointer) {
+    const rippleTargets = document.querySelectorAll(
+      "a, button, .section-shell, .surface-card, .project-card, .certificate-trigger, .footer-panel"
+    );
+
+    rippleTargets.forEach((target) => {
+      target.classList.add("touch-ripple-host");
+
+      target.addEventListener(
+        "pointerdown",
+        (event) => {
+          if (event.pointerType !== "touch") return;
+
+          const targetRect = target.getBoundingClientRect();
+          const ripple = document.createElement("span");
+          ripple.className = "touch-ripple";
+          ripple.style.left = `${event.clientX - targetRect.left}px`;
+          ripple.style.top = `${event.clientY - targetRect.top}px`;
+          target.appendChild(ripple);
+
+          window.setTimeout(() => {
+            ripple.remove();
+          }, 560);
+        },
+        { passive: true }
+      );
+    });
+  }
 
   anchorLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -144,13 +174,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
       });
     },
-    { threshold: 0.14 }
+    {
+      threshold: 0.18,
+      rootMargin: "0px 0px -8% 0px",
+    }
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));

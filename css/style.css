@@ -1078,8 +1078,10 @@ html.dark .edu-metric {
 
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 700ms ease, transform 700ms ease;
+  transform: translateY(28px);
+  transition:
+    opacity 680ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.is-visible {
@@ -1133,6 +1135,44 @@ main section[id] {
   height: 28px;
   border-color: rgba(194, 106, 61, 0.72);
   background: rgba(194, 106, 61, 0.08);
+}
+
+.touch-ripple-host {
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.touch-ripple {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(194, 106, 61, 0.34) 0%, rgba(194, 106, 61, 0.16) 45%, rgba(194, 106, 61, 0.04) 68%, rgba(194, 106, 61, 0) 78%);
+  transform: translate3d(-50%, -50%, 0) scale(0.4);
+  opacity: 0;
+  animation: touch-ripple 560ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+html.dark .touch-ripple {
+  background: radial-gradient(circle, rgba(246, 200, 176, 0.4) 0%, rgba(96, 165, 250, 0.22) 44%, rgba(96, 165, 250, 0.08) 66%, rgba(96, 165, 250, 0) 80%);
+}
+
+@keyframes touch-ripple {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.4);
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(8.5);
+  }
 }
 
 html.dark .cursor-ring {
@@ -1455,6 +1495,15 @@ html.dark .cursor-ring.is-hovering {
     padding: 1.1rem;
   }
 
+  #internship .certificate-trigger .flex.items-start.justify-between.gap-4 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #internship .certificate-trigger .rounded-full.border.border-accent\/20.bg-accent\/10 {
+    align-self: flex-start;
+  }
+
   .project-preview {
     height: 11rem;
     margin-bottom: 1rem;
@@ -1489,8 +1538,12 @@ html.dark .cursor-ring.is-hovering {
     padding: 1rem;
   }
 
-   .case-study-modal {
+  .case-study-modal {
     padding: 1rem;
+  }
+
+  .scroll-progress {
+    display: none;
   }
 
   .certificate-lightbox__content {
@@ -1660,10 +1713,63 @@ html.dark .cursor-ring.is-hovering {
   footer {
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     line-height: 1.6;
   }
 
-  footer .grid.gap-6.sm\:grid-cols-2 {
+  footer h2 {
+    font-size: 1.8rem !important;
+    line-height: 1.15;
+  }
+
+  footer p.max-w-2xl {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.65rem;
+  }
+
+  footer .mt-6.flex.flex-wrap.gap-3 {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  footer .mt-6.flex.flex-wrap.gap-3 a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  footer .grid.gap-6.sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .footer-panel {
+    padding: 1rem;
+    border-radius: 1.2rem;
+  }
+
+  footer .footer-link {
+    min-height: 2.75rem;
+    align-items: center;
+    padding: 0.15rem 0;
+  }
+
+  footer .footer-link--icon {
+    gap: 0.75rem;
+  }
+
+  footer .social-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  footer .mx-auto.mt-8.flex.max-w-6xl.justify-center.border-t.border-black\/5.pt-5.text-center.text-sm.text-gray-600 {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 }
