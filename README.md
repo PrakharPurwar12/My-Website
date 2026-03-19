@@ -20,18 +20,19 @@ The site is built to communicate three things quickly:
 
 ## Highlights
 
-- Clean responsive portfolio with light and dark mode support
-- Project showcase with live demo and GitHub links
-- Dedicated sections for internship, training, achievements, certificates, and education
-- Resume access directly from the portfolio
-- Certificate lightbox preview for credential images
-- Custom styling and interaction layers using vanilla JavaScript and CSS
+- Responsive single-page portfolio optimized for desktop, mobile, and in-between viewport sizes
+- Light and dark mode support with persistent theme preference
+- Project showcase with live demo, GitHub, and interactive case study popup
+- Certificate and credential previews through image lightbox popups
+- Dedicated sections for internship, training, achievements, extracurricular work, certificates, education, and contact
+- Custom interaction polish including smooth scrolling, scroll progress indicator, reveal animations, custom cursor on desktop, and touch ripple on mobile
+- Direct profile links for LeetCode and Code360 in the achievements section
 
 ## Featured Content
 
 ### Internship
 
-- Deloitte Data Analytics Job Simulation
+- Deloitte Data Analytics Job Simulation with certificate preview
 
 ### Selected Projects
 
@@ -39,6 +40,11 @@ The site is built to communicate three things quickly:
 - Socio-Economic Analysis of Indian Households
 - Bargain Hunter Bot
 - Car Price Prediction Model
+
+### Coding Profiles
+
+- [LeetCode](https://leetcode.com/u/eZci8M0apV/)
+- [Code360](https://www.naukri.com/code360/profile/41cdd315-1bab-44cc-b4ea-1193ceececbd)
 
 ### Skills Snapshot
 
@@ -54,6 +60,13 @@ The site is built to communicate three things quickly:
 - Custom CSS
 - Vanilla JavaScript
 
+## Experience Goals
+
+- Make the portfolio easy for recruiters to scan in under a minute
+- Present projects with both quick summaries and deeper case study context
+- Keep the UI polished across desktop, mobile, and edge-case viewport sizes
+- Highlight both technical work and learning progression in one place
+
 ## Sections Included
 
 - Hero
@@ -68,38 +81,15 @@ The site is built to communicate three things quickly:
 - Education
 - Contact
 
-## Project Structure
+## Interaction Features
 
-```text
-Portfolio/
-|-- index.html
-|-- css/
-|   `-- style.css
-|-- js/
-|   |-- script.js
-|   `-- cursor-trail.js
-|-- assets/
-|   |-- docs/
-|   |   `-- Resume.pdf
-|   `-- images/
-|       |-- deloitte-certificate.png
-|       |-- dp.png
-|       |-- favicon.svg
-|       |-- FreeCodeCamp.png
-|       |-- google-certificate.png
-|       |-- hooded-coder.svg
-|       |-- image.png
-|       |-- lpu-ml-certificate.png
-|       |-- portfolio-landing-preview.png
-|       |-- project-bargain-hunter.svg
-|       |-- project-car-price.svg
-|       |-- project-household-analysis.svg
-|       |-- project-sales-dashboard.svg
-|       |-- square_image.png
-|       `-- toc.png
-|-- .gitignore
-`-- README.md
-```
+- Project case study modal with problem, build details, tech stack, and impact
+- Certificate image popups for training, internship, extracurricular, and certificate cards
+- Smooth section reveal effects on scroll
+- Hidden-scroll education panel with animated timeline progress marker
+- Desktop custom cursor ring
+- Mobile touch ripple feedback
+- Smooth anchor scrolling with sticky navigation support
 
 ## Run Locally
 
@@ -109,17 +99,44 @@ This is a static website, so no build process is required.
 2. Open `index.html` in a browser.
 3. For a better workflow, run it with a live server extension from your editor.
 
+## Deployment
+
+This portfolio is deployed as a static website using GitHub Pages.
+
+- Live URL: `https://prakharpurwar12.github.io/My-Website/`
+- No build step is required before deployment
+- Pushing updated static files is enough to publish changes
+
+## Customization
+
+If you want to adapt this portfolio for your own use, update these areas first:
+
+- hero heading and summary
+- project cards and case study content
+- certificate images and labels
+- contact links and resume file
+- social profile links in achievements and footer
+
 ## Why This Portfolio
 
 This portfolio is structured to be simple for recruiters to scan while still showing technical depth through:
 
 - impact-focused project summaries
-- direct access to demos and source code
+- direct access to demos, source code, and coding profiles
+- project case studies with extra implementation context
 - clearly separated learning, training, and certification sections
-- a polished UI with responsive behavior and theme support
+- a polished UI with responsive behavior, theme support, and interaction polish
+
+## Notes
+
+- The site includes lightbox-style certificate previews and a project case study modal
+- Responsive behavior has been tuned for desktop, mobile, and narrow inspect/device-mode widths
+- Desktop and mobile interaction layers are intentionally different to keep the experience natural on each device
 
 ## Contact
 
 - Email: `purwarprakhar00@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/prakharpurwar/`
 - GitHub: `https://github.com/PrakharPurwar12`
+- LeetCode: `https://leetcode.com/u/eZci8M0apV/`
+- Code360: `https://www.naukri.com/code360/profile/41cdd315-1bab-44cc-b4ea-1193ceececbd`
