@@ -1214,13 +1214,15 @@ html.dark .cursor-ring.is-hovering {
 
 @media (max-width: 1023px) {
   nav .mx-auto {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: clamp(0.9rem, 2.4vw, 1.15rem);
+    padding-right: clamp(0.9rem, 2.4vw, 1.15rem);
     padding-top: 0.85rem;
     padding-bottom: 0.85rem;
   }
 
   main {
+    padding-left: clamp(1rem, 2.6vw, 1.35rem);
+    padding-right: clamp(1rem, 2.6vw, 1.35rem);
     padding-top: 1.5rem;
   }
 
@@ -1250,6 +1252,7 @@ html.dark .cursor-ring.is-hovering {
   .profile-frame img {
     height: clamp(16rem, 42vw, 20rem);
     width: 100%;
+    border-radius: 1.35rem;
     object-position: center 14%;
   }
 
@@ -1266,6 +1269,98 @@ html.dark .cursor-ring.is-hovering {
 
   html.dark #certificates img {
     background: rgba(15, 23, 42, 0.92);
+  }
+
+  #certificates article {
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #home .mt-10.grid.gap-4.lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #certificates .grid.gap-6.lg\:grid-cols-2.xl\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  #certificates article.md\:col-span-2.xl\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  #certificates img {
+    height: 11.25rem;
+  }
+}
+
+@media (max-width: 479px) {
+  nav .mx-auto {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .brand-signature {
+    font-size: 1.2rem !important;
+    gap: 0.45rem;
+  }
+
+  #theme-toggle,
+  #menu-button {
+    width: 2.55rem;
+    height: 2.55rem;
+  }
+
+  main {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  #home h1,
+  h1 {
+    font-size: 1.9rem !important;
+    line-height: 1.04 !important;
+  }
+
+  #home .mt-8.flex.flex-wrap.gap-4 a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .profile-frame .section-shell {
+    padding: 0.8rem;
+  }
+
+  .profile-frame img {
+    height: 15.5rem;
+    border-radius: 1rem;
+  }
+
+  #skills .surface-card,
+  #projects article,
+  #certificates article,
+  #achievements .surface-card,
+  #training .surface-card,
+  #extracurricular .surface-card {
+    padding: 1rem;
+  }
+
+  #certificates img,
+  .project-preview {
+    height: 9.75rem;
+  }
+
+  #contact a[href^="mailto:"] {
+    font-size: 1.25rem;
+  }
+
+  footer h2 {
+    font-size: 1.55rem !important;
+  }
+
+  footer .grid.gap-6.sm\:grid-cols-2 {
+    grid-template-columns: 1fr;
   }
 }
 
