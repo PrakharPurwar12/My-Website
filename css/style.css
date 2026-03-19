@@ -1212,6 +1212,63 @@ html.dark .cursor-ring.is-hovering {
   }
 }
 
+@media (max-width: 1023px) {
+  nav .mx-auto {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  main {
+    padding-top: 1.5rem;
+  }
+
+  #home > section:first-child {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+
+  #home h1 {
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    line-height: 1.02;
+    max-width: 100%;
+  }
+
+  #home .mt-10.grid.gap-4.lg\:grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-frame {
+    order: -1;
+  }
+
+  .profile-frame .section-shell {
+    padding: 1rem;
+  }
+
+  .profile-frame img {
+    height: clamp(16rem, 42vw, 20rem);
+    width: 100%;
+    object-position: center 14%;
+  }
+
+  #certificates img {
+    height: 10.5rem;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 0.35rem;
+  }
+
+  #certificates .grid.gap-6.lg\:grid-cols-2.xl\:grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  html.dark #certificates img {
+    background: rgba(15, 23, 42, 0.92);
+  }
+}
+
 @media (max-width: 767px) {
   body {
     font-size: 15px;
