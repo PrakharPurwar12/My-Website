@@ -450,8 +450,8 @@ html.dark .theme-icon {
 }
 
 .path-burger {
-  mask: url(#more-menu-mask);
   -webkit-mask: url(#more-menu-mask);
+  mask: url(#more-menu-mask);
 }
 
 #more-button {
