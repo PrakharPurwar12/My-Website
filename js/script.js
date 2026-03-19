@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const navElement = document.querySelector("nav");
   const profileFrame = document.querySelector(".profile-frame");
   const navProfileChip = document.querySelector(".nav-profile-chip");
+  const educationPanel = document.querySelector(".education-panel");
+  const educationScroll = document.querySelector(".education-scroll");
   const certificateTriggers = document.querySelectorAll(".certificate-trigger");
   const certificateLightbox = document.getElementById("certificate-lightbox");
   const certificateLightboxImage = document.getElementById("certificate-lightbox-image");
@@ -246,6 +248,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initProfileObserver();
     window.addEventListener("resize", initProfileObserver);
+  }
+
+  if (educationPanel && educationScroll) {
+    let educationScrollStateTimeoutId = null;
+
+    const syncEducationProgress = () => {
+      const maxScroll = educationScroll.scrollHeight - educationScroll.clientHeight;
+      const progress = maxScroll <= 0 ? 0 : educationScroll.scrollTop / maxScroll;
+      educationPanel.style.setProperty("--education-progress", progress.toFixed(4));
+    };
+
+    educationScroll.addEventListener(
+      "scroll",
+      () => {
+        educationPanel.classList.add("is-scrolling");
+        syncEducationProgress();
+        window.clearTimeout(educationScrollStateTimeoutId);
+        educationScrollStateTimeoutId = window.setTimeout(() => {
+          educationPanel.classList.remove("is-scrolling");
+        }, 140);
+      },
+      { passive: true }
+    );
+
+    window.addEventListener("resize", syncEducationProgress);
+    syncEducationProgress();
   }
 
   if (statCounts.length) {

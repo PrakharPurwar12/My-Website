@@ -1018,18 +1018,23 @@ html.dark .certificate-lightbox__close {
 .education-panel {
   position: relative;
   overflow: hidden;
+  --education-progress: 0;
+  --education-track-top: 1.75rem;
+  --education-track-bottom: 1.75rem;
+  --education-orb-size: 0.8rem;
 }
 
 .education-scroll {
   max-height: 32rem;
   overflow-y: auto;
-  padding-right: 0.5rem;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(194, 106, 61, 0.45) transparent;
+  padding-right: 0.2rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .education-scroll::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
+  height: 0;
 }
 
 .education-scroll::-webkit-scrollbar-track {
@@ -1049,21 +1054,48 @@ html.dark .education-scroll::-webkit-scrollbar-thumb {
   content: "";
   position: absolute;
   left: 1.5rem;
-  top: 1.75rem;
-  bottom: 1.75rem;
+  top: var(--education-track-top);
+  bottom: var(--education-track-bottom);
   width: 1px;
   background: linear-gradient(180deg, rgba(194, 106, 61, 0.45), rgba(194, 106, 61, 0));
+}
+
+.education-panel::after {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: var(--education-track-top);
+  width: 2px;
+  height: calc((100% - var(--education-track-top) - var(--education-track-bottom)) * var(--education-progress));
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(194, 106, 61, 0.95), rgba(194, 106, 61, 0.18));
+  box-shadow: 0 0 18px rgba(194, 106, 61, 0.22);
+  transition: height 320ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .education-orb {
   position: absolute;
   left: calc(1.5rem - 0.38rem);
-  top: 2rem;
+  top: calc(
+    var(--education-track-top) +
+    ((100% - var(--education-track-top) - var(--education-track-bottom) - var(--education-orb-size)) * var(--education-progress))
+  );
   height: 0.8rem;
   width: 0.8rem;
   border-radius: 999px;
   background: #c26a3d;
   box-shadow: 0 0 0 8px rgba(194, 106, 61, 0.12);
+  transition:
+    top 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 260ms ease,
+    transform 260ms ease;
+}
+
+.education-panel.is-scrolling .education-orb {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 0 8px rgba(194, 106, 61, 0.12),
+    0 0 18px rgba(194, 106, 61, 0.3);
 }
 
 .edu-metric {
@@ -1074,6 +1106,15 @@ html.dark .education-scroll::-webkit-scrollbar-thumb {
 html.dark .edu-metric {
   border-color: rgba(148, 163, 184, 0.14);
   background: rgba(30, 41, 59, 0.8);
+}
+
+html.dark .education-panel::before {
+  background: linear-gradient(180deg, rgba(148, 163, 184, 0.32), rgba(148, 163, 184, 0.02));
+}
+
+html.dark .education-panel::after {
+  background: linear-gradient(180deg, rgba(246, 200, 176, 0.95), rgba(96, 165, 250, 0.22));
+  box-shadow: 0 0 18px rgba(96, 165, 250, 0.16);
 }
 
 .reveal {
