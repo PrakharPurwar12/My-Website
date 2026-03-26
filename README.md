@@ -2,7 +2,7 @@
 
 Personal portfolio website for showcasing my work in data analytics, machine learning, and full stack development.
 
-[Live Website](https://prakharpurwar12.github.io/My-Website/) | [Resume](assets/docs/Resume.pdf) | [LinkedIn](https://www.linkedin.com/in/prakharpurwar/) | [GitHub](https://github.com/PrakharPurwar12)
+[Live Website](https://prakharpurwar12.github.io/My-Website/) | [Resume](assets/docs/Resume-2026.pdf) | [LinkedIn](https://www.linkedin.com/in/prakharpurwar/) | [GitHub](https://github.com/PrakharPurwar12)
 
 ## Preview
 
